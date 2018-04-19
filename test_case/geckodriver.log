@@ -1,0 +1,29 @@
+1524105558838	geckodriver	INFO	Listening on 127.0.0.1:8940
+1524105560835	mozprofile::profile	INFO	Using profile path D:\Users\huangmin\AppData\Local\Temp\rust_mozprofile.ZbodfkkpoaoL
+1524105560850	geckodriver::marionette	INFO	Starting browser D:\SOFTWARE\firefox\firefox.exe
+1524105561139	geckodriver::marionette	INFO	Connecting to Marionette on localhost:8951
+1524105571575	Marionette	INFO	Listening on port 8951
+JavaScript warning: http://h4.jkimg.net/caipiao/js/indexv5/index.js?v=201803161619, line 542: unreachable code after return statement
+JavaScript warning: http://h2.jkimg.net/passport/pass-info/js/sparta/pawebjs-1.3.0.js, line 1: Error: WebGL: Failed to create WebGL context: WebGL creation failed: 
+* Error during ANGLE OpenGL init.
+* Error during ANGLE OpenGL init.
+* Error during ANGLE OpenGL init.
+* Error during ANGLE OpenGL init.
+* Error during ANGLE OpenGL init.
+* Exhausted GL driver caps.
+JavaScript warning: http://h2.jkimg.net/passport/pass-info/js/sparta/pawebjs-1.3.0.js, line 1: Error: WebGL: Failed to create WebGL context: WebGL creation failed: 
+* Error during ANGLE OpenGL init.
+* Error during ANGLE OpenGL init.
+* Error during ANGLE OpenGL init.
+* Error during ANGLE OpenGL init.
+* Error during ANGLE OpenGL init.
+* Exhausted GL driver caps.
+JavaScript warning: http://h4.jkimg.net/caipiao/js/indexv5/index.js?v=201803161619, line 542: unreachable code after return statement
+JavaScript warning: http://h4.jkimg.net/caipiao/js/indexv5/index.js?v=201803161619, line 542: unreachable code after return statement
+1524105632000	Marionette	INFO	New connections will no longer be accepted
+[Child 8528] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2152
+52
+/src/ipc/glue/MessageChannel.cpp, line 2152
+el error.: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2152
+152
+2152

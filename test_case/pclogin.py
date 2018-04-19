@@ -1,0 +1,47 @@
+# coding:utf-8
+from  selenium  import webdriver
+import time
+from tools import Memcache,logger
+
+
+class CaipiaoLogin:
+	def __init__(self):
+		self.driver = webdriver.Firefox()
+		#self.driver.implicitly_wait(30)
+		self.base_url = "http://caipiao.1768.com"
+		self.uname = 'hm_txz'
+		self.pwd = 'test1324'
+	def login(self):
+		from tools import  load_cookie_dir
+		driver = self.driver
+		driver.get(self.base_url)
+		time.sleep(3)
+		driver.find_element_by_xpath('//*[@id="head_top_login"]').click()
+		time.sleep(5)
+		driver.find_element_by_xpath('/html/body/div[2]/div/div/div[2]/ul[1]/li[1]').click()
+		time.sleep(2)
+		driver.find_element_by_xpath('//*[@id="id_pawform"]/div[1]/input').send_keys(self.uname)
+		time.sleep(2)
+		driver.find_element_by_xpath('//*[@id="txzpwd"]').send_keys(self.pwd)
+		driver.find_element_by_xpath('/html/body/div[2]/div/div/div[2]/div[2]/span').click()
+		time.sleep(10)
+		driver.refresh()
+		time.sleep(10)
+		cookie = driver.get_cookies()
+		logger('cookie',cookie)
+		driver.quit()
+		dic = {}
+		for i in cookie:
+			keys = i['name']
+			value = i ['value']
+			dic[keys] = value
+		Memcache().setmem('cookie',cookie)#写入memcache
+		load_cookie_dir()#切换到数据目录
+		f = open('cookie.txt','w')#将cookie写入data下的cookie文件
+		f.write(str(dic))
+
+if __name__ == '__main__':
+	pclogin = CaipiaoLogin()
+	pclogin.login()
+	mem = Memcache().getmem('cookie')
+	print mem

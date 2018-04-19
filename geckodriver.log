@@ -1,0 +1,10 @@
+1523267924420	geckodriver	INFO	Listening on 127.0.0.1:53532
+1523267926104	mozprofile::profile	INFO	Using profile path D:\Users\huangmin\AppData\Local\Temp\rust_mozprofile.kYbUJHyjk8i0
+1523267926149	geckodriver::marionette	INFO	Starting browser D:\SOFTWARE\firefox\firefox.exe
+1523267926561	geckodriver::marionette	INFO	Connecting to Marionette on localhost:53543
+1523267936541	Marionette	INFO	Listening on port 53543
+1523267956099	Marionette	WARN	Using deprecated data structure for setting timeouts
+1523267988877	Marionette	INFO	New connections will no longer be accepted
+[Child 21260] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2152
+12
+[Child 1424] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2152
