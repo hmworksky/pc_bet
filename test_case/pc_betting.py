@@ -1,34 +1,38 @@
 # coding:utf-8
 import requests,re
-from tools import bet_str,readconfig,file_to_cookie,url2Dict,get_num_issue,xpath,pc_bet_data
+from tools import readconfig,file_to_cookie,url2Dict,pc_bet_data,logger,jc_bet_data,Memcache
 from bs4 import *
+import tools
 
 
 
 
 class Pcbet(object):
-	def __init__(self):
+	def __init__(self,num):
 		self.base_url = readconfig('base_url')
-		self.bet_url = readconfig('bet_url')
 		self.session = requests.Session()
 		self.cookie = file_to_cookie()
+		self.mem = Memcache()
+		self.num = num
 
 	def pc_touzhu(self):
 		import urllib
-		# bet_info = bet_str(200, 6, 1, "01")
-		# form_data = {
-		# 	"issue": get_num_issue(201),#此处需要改成从接口获取
-		# 	"lottery_id": 201,#同上
-		# 	"betstr": '13$2_2~2',
-		# 	"betnum": None,
-		# 	"multiple": 1,
-		# 	"is_add": 2
-		# }
 		#获取投注form表单，pc_bet_data传递的参数详情见data文件中的bet_info
-		forms_data = pc_bet_data('04')
+		if self.num>10000:
+			forms_data = pc_bet_data(self.num)
+			bet_url = readconfig('num_bet_url')
+		else:
+			num = self.num
+			forms_data = eval(self.mem.getmem("bet_{num}".format(**locals())))
+			if self.num in (30,31,32,33,35):
+				bet_url = readconfig('jclq_bet_url')
+			else:
+				bet_url = readconfig('jczq_bet_url')
 		#发送投注请求
-		s = self.session.post(url=self.bet_url, cookies=self.cookie, data=forms_data)
-		print s.content
+		print forms_data
+		print self.cookie
+		s = self.session.post(url=bet_url, cookies=self.cookie, data=forms_data)
+		logger('bet',s.content)
 		# 获取返回值中的url参数
 		url = eval(s.content)['url']
 		# 拼接url
@@ -41,6 +45,13 @@ class Pcbet(object):
 		return html,data_info
 
 
+
+	def jc_touzhu(self):
+		form_data = jc_bet_data(25)
+		form_data = self.mem.getmem('bet_25')
+		s = self.session.post(url=readconfig('jc_bet_url'), cookies=self.cookie, data=form_data)
+		logger('jc_bet', s.content)
+		print s.content
 
 	def pay_cj(self):
 		html,data_info = self.pc_touzhu()
@@ -83,5 +94,5 @@ class Pcbet(object):
 		return info
 
 if __name__ == '__main__':
-	zf = Pcbet()
-	zf.pc_touzhu()
+	zf = Pcbet(32)
+	print zf.pc_touzhu()

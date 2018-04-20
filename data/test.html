@@ -1,0 +1,2533 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title>竞彩足球2选1投注-竞彩足球-平安彩票</title>
+<meta name="description" content="平安彩票提供竞彩足球2选1过关投注,竞彩足球2选1合买代购、竞彩足球2选1网上投注等服务,方便彩民在线购买竞彩足球总进球." />
+<meta name="keywords" content="竞彩足球,平安彩票,竞彩足球2选1投注,2选1玩法，竞足预测,竞彩代购,500万,胜平负分析" />
+<meta name="pa_page" content="fd944a93c92211e4a757d655ca7919b8" />
+<link rel="Shortcut Icon" href="http://h1.jkimg.net/caipiao/images/favicon.ico?v=201803161619" />
+<link charset="utf-8" rel="stylesheet" href="http://h2.jkimg.net/caipiao/css/common/global.css?v=201803161619" />
+<script type="text/javascript" src="http://h3.jkimg.net/caipiao/js/base/global.lib.js?v=201803161619"></script>
+<script type="text/javascript" src="http://h4.jkimg.net/caipiao/js/base/global.js?v=201803161619"></script>
+<script type="text/javascript">
+    
+    var _hmt = _hmt || [];
+    
+    
+    var _wlt_host = "http://www.wanlitong.com";
+    var _pingan_host = "https://member.pingan.com.cn";
+    var _biying_host = "http://5biying.1768.com";
+    var _host_url = "http://caipiao.1768.com";
+    var _vip_host = "http://vip.24caipiao.com/"; //新手任务使用 2014-03-11
+    
+    
+    var _conn_mem_sys = "1";
+</script>
+<link rel="stylesheet" href="http://h1.jkimg.net/caipiao/css/common/global.common.css?v=201803161619" />
+<link rel="stylesheet" href="http://h2.jkimg.net/caipiao/css/task_style.css?v=201503031809" type="text/css">
+<script type="text/javascript" src="http://h3.jkimg.net/caipiao/js/base/global.common.js?v=201803161619"></script>
+<script type="text/javascript" src="http://h4.jkimg.net/caipiao/js/base/global.task.js?v=201803161619"></script>
+
+<link type="text/css" rel="stylesheet" href="http://h1.jkimg.net/caipiao/css/football.css?v=201803161619">
+<link type="text/css" rel="stylesheet" href="http://h2.jkimg.net/caipiao/css/football-exy.css?v=201803161619">
+<link type="text/css" rel="stylesheet" href="http://h3.jkimg.net/caipiao/css/jquery.jscrollpane.css?v=201803161619">
+<link rel="stylesheet" href="http://h4.jkimg.net/caipiao/css/investchannel/invest_channel_base.css?v=201803161619"  type="text/css" />
+
+<script type="text/javascript" src="http://h1.jkimg.net/caipiao/js/jquery.mousewheel.js?v=201803161619"></script>
+<script type="text/javascript" src="http://h2.jkimg.net/caipiao/js/jquery.jscrollpane.min.js?v=201803161619"></script>
+<script type="text/javascript" src="http://h3.jkimg.net/caipiao/js/waypoints.min.js?v=201803161619"></script>
+<script type="text/javascript" src="http://h4.jkimg.net/caipiao/js/waypoints-sticky.min.js?v=201803161619"></script>
+
+<script type="text/javascript">
+$(function(){
+    /*//阅读模式
+    $(".read-mode").click(function(e){
+        var _this = $(this);
+        if(_this.hasClass("night-mode")){
+            $("body").animate({
+                "backgroundColor":"#fff"
+                },"slow",function(){
+                    _this.removeClass("night-mode");
+                    _this.text("夜间模式");
+                });
+            
+        } else {
+            $("body").animate({
+                "backgroundColor":"#000",
+                },"slow",function(){
+                    _this.addClass("night-mode");
+                    _this.text("取消夜间模式");
+                });
+        }
+    })*/
+   //根据“过关方式”列表内容高度来动态调整显示此区域样式
+    function  autoPasstypeScroll(){
+        var windowHeight,passtypeMaxHeight;
+        windowHeight = $(window).height();
+        passtypeMaxHeight = windowHeight - 535;
+        
+        passtypeMaxHeight =  passtypeMaxHeight <50 ? 50  :passtypeMaxHeight;
+        
+        var instance_scroll_pt = $('.passtype-list-panel').data("jsp");
+         
+         if($('.paastype-content').height() > passtypeMaxHeight){
+             $('.passtype-list-panel').height(passtypeMaxHeight);
+             if(!instance_scroll_pt){
+                 $('.passtype-list-panel').jScrollPane();
+             } else {
+                 instance_scroll_pt.reinitialise();
+             }
+         } else {
+             if(instance_scroll_pt){
+                instance_scroll_pt.destroy();
+             } 
+             $('.passtype-list-panel').height("auto");
+         }
+    }
+    //赛事列表标题头和右侧栏滚动悬停
+    $('.martrix-header,.slide-wrapper').waypoint('sticky');
+             /*滚动条*/
+        
+            var bars = '.jspHorizontalBar, .jspVerticalBar';
+            $(".order-list").on('jsp-initialised','.order-items-panel', function (event, isScrollable) {
+                $(this).find(".jspPane").width(218);
+            });
+
+            /**/
+ 
+    var martrixList = $(".martrix-list"); //赛事列表
+    var switchInfo = $(".hidden-info"); //筛选赛事操作区域
+    
+    var allSwitchBtn = $(".filter-wrapper .pop-menu-btn");
+    var allPopLayer = $(".pop-layer")
+    var allFilterPopLayer = $(".filter-wrapper .pop-layer");
+    var allFilterCbx = allFilterPopLayer.find(":checkbox");
+    
+    var  game_filterPopLayer = $(".game-filter-wrapper .pop-layer");
+    var  game_filterCbx = game_filterPopLayer.find(":checkbox");
+    
+    var  pv_filterPopLayer = $(".pv-filter-wrapper .pop-layer");
+    var  pv_filterCbx =  pv_filterPopLayer.find(":checkbox");
+    
+    var  swicthBtns = $("a.swicth-list");
+    
+    var orderItems = $("#order-items"); //已投注记录列表
+    var passTypeBox = $(".pass-type"); //过关方式
+    
+    var submitTouzhuBtn = $("#submitTouzhuBtn"); //确认投注按钮
+    var bonusTouzhuBtn = $("#bonusTouzhuBtn"); //奖金明细按钮
+    
+    
+    $(document).click(function(e){
+        var _target = $(e.target);
+        if( !_target.is(allPopLayer) && !_target.is(allSwitchBtn) ){
+            allPopLayer.hide();
+            allSwitchBtn.removeClass();
+            allSwitchBtn.addClass("pop-menu-btn pop-btn-normal");
+        }
+    });
+    
+    /*查看奖金明细*/
+    bonusTouzhuBtn.click(function(){
+        var match_num = l.getMatchNum();
+        if(match_num < 2){
+            CP.Util.alertBox({
+                msg:"<div class='font14px'>请至少选择2场比赛进行投注</div>"
+            });
+            return false;
+        }
+        if(l.getPlayName() == ""){
+            CP.Util.alertBox({
+                msg:"<div class='font14px'>请选择过关方式</div>"
+            });
+            return false;
+        }
+        var msg = tools();
+        CP.Util.alertBox({
+            title:"竞彩足球奖金明细",
+            msg :msg,
+            dlgclass:'bonusDetail',
+            width:700,
+            height:580,
+            isshowbutton:false,
+            fix:false,
+            onopen:function(){
+                
+            }
+        })
+    });
+    
+    /*切换显示[比赛时间][截止时间]*/
+    $(".martrix-header .game-time span").click(function(){
+        var _type = $(this).hasClass("show-by-game-time") ?1:0;
+        var timeSpans = martrixList.find(".game-time span");
+        
+        $(".martrix-header .game-time span").removeClass("selected");
+        timeSpans.hide();
+        $(this).addClass("selected");
+        
+        if(_type == 0){
+            timeSpans.filter(".show-end-time").css("display","block");
+        } else {
+            timeSpans.filter(".show-game-time").css("display","block");
+        }
+    });
+    
+    //阻止点击筛选浮层时的事件冒泡,保证点击浮层自身区域时，浮层不关闭
+    allPopLayer.click(function(e){e.stopPropagation();})
+    
+    /*赛事快速选择*/
+    $(".league-qiuck-choose a").click(function(){
+        var _type = this.className;
+        if(_type == "allSelected"){
+            
+            game_filterCbx.each(function(){
+                this.checked = true;    
+                swicthLeaguesTr(this);
+            });
+
+        } else {
+            game_filterCbx.each(function(){
+                if(this.checked){
+                    this.checked = false;
+                } else {
+                    this.checked = true;
+                }
+                swicthLeaguesTr(this);
+            });
+
+        }
+        
+        showSwicthInfo();
+    });
+    
+    /*筛选信息[恢复]按钮事件绑定*/
+    switchInfo.find(".recover").click(function(){
+        martrixList.find("tbody tr").show();
+        showSwicthInfo();
+    })
+    
+    /*场次区域点击事件*/
+    martrixList.find("tr.game-item:not(.game-item-hot) .league").click(function(){
+        $(this).parent().hide(); //隐藏此条赛事信息 
+        showSwicthInfo();
+    });
+    
+    /*赔率投注按钮*/
+    martrixList.find(".odds a").click(function(){
+       var _this = $(this);
+       var _parent_tr = _this.parents("tr");
+       var _isChcked = _this.hasClass("selected");
+       var _gameId = _parent_tr.attr("data-game-id");
+       var _oddType = $.trim(_this.attr("data-odd-type"));
+       var _numb = _this.attr("numb");
+       var _oddIdx;
+       var _odd_idx = parseInt(_this.attr("data-odd-index"));
+       
+       var _order_idx = parseInt(_parent_tr.attr("data-order-index"));
+       var _odd_name = _this.find("ins").text().trim();
+       var all_item_trs = orderItems.find("tr[data-game-id]");
+      
+       var item_tr = orderItems.find("tr[data-game-id='"+ _gameId +"']");
+       
+       var temp_str = "";
+       var _game_no,_game_home,_game_visiting;
+       
+       //var list_tr  = martrixList.find(".game-item[data-game-id='"+ _gameId +"']")
+       var _add_item = [];
+       if(!_isChcked){ //开始添加一个赔率投注
+           if(item_tr.length==0){ //如果还没有关于此赛事的任何投注记录
+               _game_no = _parent_tr.find(".league").text().split(" ")[0];
+               _game_home = $.trim( _parent_tr.find(".home-team").text().replace(/\[\d*\]/,"") );
+               
+              
+               if((all_item_trs.length % 2) != 0)
+                  temp_str = '<tr class="even-item" data-game-id="'+ _gameId +'" data-order-index="'+ _order_idx +'">'
+               else
+                  temp_str = '<tr class="odd-item" data-game-id="'+ _gameId +'" data-order-index="'+ _order_idx +'">'
+                   
+               temp_str += '<td  class="game-no"><input type="checkbox" value="'+ _game_no +'" name="order-no" checked="checked" /><span title="'+ _game_no +'">'+ _game_no.replace(/[\u4e00-\u9fa5]+/, "") +'</span></td>'
+                          +'<td  class="home-team" ><span title="'+ _game_home +'">'+ _game_home.slice(0,4) +'</span></td><td  class="touzhu-info">';
+              temp_str +='<a   href="javascript:;" data-odd-type="'+ _oddType +'" data-odd-index="'+ _odd_idx +'">'+ _odd_name +'</a>';
+              temp_str +='</td><td  class="dan-info"> <input type="checkbox" value="'+ _numb +'"  name="order-dan" /></td>';
+              temp_str +='</tr>';
+              
+              item_tr = $(temp_str);
+              orderItems.append(item_tr);
+              _add_item = item_tr.find('a[data-odd-type]');
+             
+           } else {
+               _add_item = $('<a   href="javascript:;" data-odd-type="'+ _oddType +'" data-odd-index="'+ _odd_idx +'">'+ _odd_name +'</a>');
+               if( _add_item.length>0 ){
+                  item_tr.find(".touzhu-info").append(_add_item);
+              }
+           }
+           
+           sortOddItems(item_tr);
+           
+       } else {
+           if(_oddType == "sf_home"){
+               item_tr.find(".touzhu-info a[data-odd-type='sf_home']").remove();
+           } else {
+               item_tr.find(".touzhu-info a[data-odd-type='sf_visiting']").remove();
+           }
+           //如果此场赛事没有选择任一方胜时，则移除此条投注记录
+           if(item_tr.find(".touzhu-info a").length==0){
+               item_tr.remove();
+           }
+       }
+       
+        showTouzhuInfo(_add_item);
+       _this.toggleClass("selected");
+       interact.matchselect(this,l);
+       autoPasstypeScroll();
+    })
+    
+    //已投注记录列表中场次复选框事件绑定
+    orderItems.on("click",".game-no :checkbox",function(){
+        var _this = $(this);    
+        if(!this.checked){ //如果取消勾选状态
+            var _parents_tr = _this.parents("tr");
+            var _game_id = _parents_tr.attr("data-game-id");
+            
+            _parents_tr.remove();
+            martrixList.find("tr[data-game-id='"+ _game_id +"'] .odds a.selected").trigger("click");
+            //martrixList.find("tr[data-game-id='"+ _game_id +"'] .odds a").removeClass("selected");
+        }
+        showTouzhuInfo();
+    })
+    
+    //已投注记录列表项按钮事件绑定
+    orderItems.on("click",".touzhu-info a",function(){
+        var _this = $(this);
+        var _game_id = _this.parents("tr").attr("data-game-id");
+        var _odd_type = _this.attr("data-odd-type");
+        $(this).remove();
+        
+        var _rel_odd = martrixList.find("tr[data-game-id='"+ _game_id +"'] .odds [data-odd-type='"+ _odd_type +"']");
+        if(_rel_odd.length >0 ) _rel_odd.trigger("click");//_rel_odd.removeClass("selected");
+        showTouzhuInfo();
+    })
+    
+    /*过关方式菜单切换*/
+    passTypeBox.find(".pass-type-menu a").click(function(){
+            passTypeBox.find(".pass-type-menu li").removeClass("selected");
+            
+            var _this = $(this);
+            var _data_type = _this.attr("data-list-type");
+            
+            _this.parent().addClass("selected");
+            passTypeBox.find(".pass-type-list").hide();
+            passTypeBox.find("ul[data-list-type='"+ _data_type +"']").show();
+            autoPasstypeScroll();
+    });
+    
+        
+    function sortOddItems(item_tr){
+        if(!item_tr.length || item_tr.length <=0) return;
+        
+        var touzhu_info = item_tr.find(".touzhu-info");
+        
+        var _idx_Arr= [];
+        var _item_odd;
+        var _odd_items = touzhu_info.find("a[data-odd-index]");
+        
+        var  sortMinNumber = function(a,b){  
+                return a-b;  
+        }
+        
+        if(_odd_items.length <=0) return;
+        
+        for(var i=0; i<_odd_items.length; i++){
+            _idx_Arr.push(parseInt(_odd_items.eq(i).attr("data-odd-index")));
+        }   
+        _idx_Arr.sort(sortMinNumber);
+        _odd_items.remove();
+        
+        for(i=0; i<_idx_Arr.length; i++){
+            _item_odd = _odd_items.filter("[data-odd-index='"+ _idx_Arr[i] +"']");
+            touzhu_info.append(_item_odd);
+        }
+    }
+    
+    function sortOrderItems(){
+        var _idx_Arr= [];
+        var _item_tr;
+        var _order_items = orderItems.find("tr[data-order-index]");
+        
+        if(_order_items.length <=0) return;
+        
+        for(var i=0; i<_order_items.length; i++){
+            _idx_Arr.push(parseInt(_order_items.eq(i).attr("data-order-index")));
+        }   
+        _idx_Arr.sort(function(a,b){return a>b?1:-1});
+        _order_items.remove();
+        
+        for(i=0; i<_idx_Arr.length; i++){
+            _item_tr = _order_items.filter("[data-order-index='"+ _idx_Arr[i] +"']");
+            _item_tr.removeClass();
+            
+            if(i % 2 == 0){
+                _item_tr.addClass("odd-item");
+            }else{
+                _item_tr.addClass("even-item");
+            }
+            orderItems.append(_item_tr);
+        }
+    }
+    
+    
+    /*更新投注列表显示信息，当没有投注记录时，显示暂无投注提示*/
+    function showTouzhuInfo(tItem){
+         var _iteams_tr = orderItems.find("tr[data-game-id]");
+         var _none_tr = orderItems.find("tr.none-odd-item");
+         var instance_scroll_order;
+         
+         var _invalid_count = 0;
+         
+         if(_iteams_tr.length == 0){
+             _none_tr.show();    
+         } else {
+             _iteams_tr.each(function(idx, el) {
+                var _anchors = $(this).find(".touzhu-info a");
+                if(_anchors.length == 0) {
+                    $(this).remove();
+                    _invalid_count++
+                }
+            });
+            if(_invalid_count == _iteams_tr.length){
+                _none_tr.show();
+            } else {
+                _none_tr.hide();
+                sortOrderItems();
+            }
+         }
+         
+         instance_scroll_order = $('.order-items-panel').data("jsp");
+         
+         if(orderItems.height() > 150){
+             $('.order-items-panel').height(150);
+             if(!instance_scroll_order){
+                 $('.order-items-panel').jScrollPane();
+             } else {
+                 instance_scroll_order.reinitialise();
+             }
+             
+             instance_scroll_order = $('.order-items-panel').data("jsp");
+             if(instance_scroll_order && tItem.length>0 ) {instance_scroll_order.scrollToElement(tItem);}
+             
+         } else {
+             if(instance_scroll_order){
+                instance_scroll_order.destroy();
+             } 
+             $('.order-items-panel').height("auto");
+         }
+    }
+    
+    /*筛选按钮鼠标悬停样式*/
+    allSwitchBtn.hover(function(){
+        var switchBtn  = $(this);
+        
+        if(switchBtn.hasClass("pop-btn-opened")){
+            switchBtn.removeClass("pop-btn-opened");
+            switchBtn.addClass("pop-btn-opened-hover");
+        } else {
+            switchBtn.removeClass("pop-btn-normal");
+            switchBtn.addClass("pop-btn-normal-hover");
+        }
+    },function(){
+        var switchBtn  = $(this);
+        if(switchBtn.hasClass("pop-btn-opened-hover")){
+            switchBtn.addClass("pop-btn-opened");
+            switchBtn.removeClass("pop-btn-opened-hover");
+        } else {
+            switchBtn.addClass("pop-btn-normal");
+            switchBtn.removeClass("pop-btn-normal-hover");
+        }
+    });
+    
+    /*筛选按钮点击事件*/
+    allSwitchBtn.click(function(e){
+        var popLayer = $(this).parents(".filter-wrapper").find(".pop-layer");
+        var switchBtn  = $(this);
+        
+        
+        allPopLayer.not(popLayer).hide();
+        allSwitchBtn.not(switchBtn).removeClass();
+        allSwitchBtn.not(switchBtn).addClass("pop-menu-btn pop-btn-normal");
+        
+        if(popLayer[0].style.display =="none"){
+            switchBtn.removeClass("pop-btn-normal");
+            switchBtn.removeClass("pop-btn-normal-hover");
+            switchBtn.addClass("pop-btn-opened");
+            
+            popLayer.fadeIn("fast");
+        } else {
+            switchBtn.removeClass("pop-btn-opened");
+            switchBtn.removeClass("pop-btn-opened-hover");
+            switchBtn.addClass("pop-btn-normal");
+            
+            popLayer.fadeOut("fast");
+        }
+        e.stopPropagation();
+    });
+    
+    
+    
+    /*筛选复选框点击事件*/
+    game_filterCbx.click(function(){
+        swicthLeaguesTr(this);
+        showSwicthInfo();
+    });
+    
+    /*根据指定筛选复选框，开关显示对应场次的赛事记录*/
+    function swicthLeaguesTr(obj){
+        var _val = $.trim($(obj).val());
+        var _isChecked  = $(obj).prop("checked");   
+        var leagues = martrixList.find(".league-name").filter("."+_val);
+        var _trs = leagues.parents("tr");
+        
+        
+        if(_isChecked){
+            _trs.show();
+        } else {
+            _trs.hide();
+        }   
+    }
+/**/
+
+    /*统计并更新显示赛事列表隐藏/显示信息，同时更新投注列表*/
+    function showSwicthInfo(){
+    
+        var countHidden = 0;
+        var _theads = martrixList.find("thead");
+        _theads.each(function(idx,obj){
+            var _thead = $(obj);
+            var  _tbody = _thead.next("tbody"); 
+            var _trs = _tbody.find("tr");
+            var  _hiddenTr = _trs.filter(":hidden")
+            
+            var swicthBtn = _thead.find("a.swicth-list");
+            
+            if(_hiddenTr.length >0){
+                swicthBtn.text("显示").addClass("closed");
+            } else {
+                swicthBtn.text("隐藏").removeClass("closed");
+            }
+            
+            /*去除被隐藏赛事的相关记录*/
+            _hiddenTr.each(function() {
+                var _this = $(this);
+                var _game_id = _this.attr("data-game-id");
+                _this.removeClass("hover");
+                //_this.find(".odds a").removeClass("selected");
+                //orderItems.find("tr[data-game-id='"+ _game_id +"']").remove();
+            });
+            
+            countHidden += _hiddenTr.length;
+        })
+        
+        showTouzhuInfo();
+        
+        if(countHidden == 0){
+            switchInfo.find("em").text(0);
+            switchInfo.find(".recover").hide();
+        } else {
+            switchInfo.find("em").text(countHidden);
+            switchInfo.find(".recover").show();
+        }
+        
+        /*赛事列表中每个场次顾型的比赛只要存在一条记录为显示状态，则筛选浮层中相对应的场次类型筛选框就应该是勾选状态
+        例如：赛事列表一共有3场NAB赛事记录，当前只有一条记录为显示状态，另两条隐藏了，但赛事筛选浮层中NAB筛选框还是为勾选状态
+        */
+        game_filterCbx.each(function(i,obj){
+            var _this = $(this);
+            var _val = $.trim($(this).val());
+            var _trs = martrixList.find("tr:visible .league-name").filter("."+_val);
+            if(_trs.length>0){
+                _this.prop("checked",true);
+            } else {
+                _this.prop("checked",false);
+            }
+        })
+        
+    
+    }
+    /**/
+    
+    /*开关显示每天比赛投注列表*/
+    swicthBtns.click(function(){
+        var _this = $(this);
+        var _trs = _this.parents("thead").next("tbody").find("tr");
+        
+        if(_this.hasClass("closed")){
+            _trs.show();
+        }else{
+            _trs.hide();
+        }
+        showSwicthInfo();
+    });
+    /**/
+    
+    
+    submitTouzhuBtn.click(function(e){
+    	//是否停售增加弹出框
+        var closesale = '';
+        if(closesale == 'yes'){
+            CP.Util.alertBox('本彩种已停止销售');
+            return false;
+        }
+        baskballSubmit();
+    });
+    
+    /*赛事列表行鼠标划过添加背景样式*/
+    martrixList.find("tr").hover(function(){
+        $(this).addClass("hover");
+    },function(){
+        $(this).removeClass("hover");
+    });
+    $(":input.multiple-input").val(5);
+    //显示焦点赛事
+    $("#hot_match").click(function(){
+        var _this = $(this);
+        if(typeof _this.attr("checked") != "undefined"){
+            window.location.href = _host_url+"/index.php?act=jczq&st=main&pid=2521";
+        }else{
+            window.location.href = _host_url+"/index.php?act=jczq&st=main&pid=2521&type=normal";
+        }
+    });
+})
+</script>
+</head>
+<body>
+<iframe id="caipiaoBYLogin" src="/blank.html" style="display: none"></iframe>
+<iframe id="caipiaoHeadIframe" src="/blank.html" style="display: none"></iframe>
+<iframe id="memsysloginiframe" src="/blank.html" style="display: none"></iframe>
+<form id="frm_head" target="_blank" action="/index.php" method="get">
+    <input type="hidden" id="head_act" name="act" value=""/>
+    <input type="hidden" id="head_st" name="st" value=""/>
+    <input type="hidden" id="head_gourl" name="gourl"  value=""/>
+    <input type="hidden" id="head_closewindow" name="close" value="1"/>
+</form>
+
+<input type="hidden" id="auto_commit_btn_class" name="auto_commit_btn_class" value=""/>
+<div class="t-nav">
+    <div class="t-con clrfix">           
+        <ul class="clrfix fl">
+            <li class="emphasize">
+                <a href="/" target="_blank" otitle="PD-彩票投注-平安彩票" otype="button" title="平安彩票">平安彩票</a>
+            </li>
+            <li>
+                <a href="http://caipiao.1768.com/index.php?act=login&st=sendGameSSOProvider&go_url=http%3A%2F%2Fwww.1768.com" target="_blank" otitle="PD-彩票投注-1768游戏" otype="button" title="1768游戏">1768游戏</a>
+            </li>
+            <!--<li>
+                <a href="http://caipiao.1768.com/index.php?act=login&st=sendWLTSSOProvider&go_url=http%3A%2F%2Fwww.wanlitong.com" target="_blank" otitle="PD-彩票投注-万里通" otype="button" title="万里通">万里通</a>
+            </li>-->
+            <li class="last">
+                <a href="http://www.pingan.com" target="_blank" otitle="PD-彩票投注-平安logo" otype="button" title="平安"><i class="pingan-logo">平安</i></a>
+            </li>
+        </ul>
+        <ul class="clrfix fr no-line">
+            <li class="noborder" id="regId">
+                <a href="http://caipiao.1768.com/index.php?act=login&st=wltreg" otitle="PD-彩票投注-注册" otype="button" target="_blank">注册</a>
+            </li>
+            <li id="loginId1">
+                <a href="javascript:void(0);" class="wanlitong_login" otitle="PD-彩票投注-登录" otype="button">登录</a>
+            </li>
+            <li id="loginId2" style="display:none">
+                <span class="fl">您好&nbsp;</span>
+                <a class="loginname my-acount"  id="login_no" href="/index.php?act=management">
+                    <span id="nameinfo" class="fl userName">HM**</span>
+               </a>    
+               <a href="./index.php?act=index&st=loginout" rel="nofollow" class="loginOut">退出</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" class="check_login_open_recharge" otitle="PD-彩票投注-充值" otype="button">充值</a>
+            </li>
+            <li class="arrow" id="caipiao_li">
+                <a href="javascript:void(0);" class="check_login_open_main" otitle="PD-彩票投注-我的彩票" class="orange" otype="button">我的彩票<span></span></a>
+                <div class="subnav" style="display: none;">
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0);" class="check_login_open_recharge" otitle="PD-彩票投注-我的彩票-充值" otype="button">充值</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="record_main" otitle="PD-彩票投注-我的彩票-我的投注" otype="button">我的投注</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="management_main" otitle="PD-彩票投注-我的彩票-帐户详情" otype="button">帐户详情</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="certificate_main" otitle="PD-彩票投注-我的彩票-认证" otype="button">认证</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="mygame">
+                <a href="http://caipiao.1768.com/index.php?act=login&st=sendGameSSOProvider&go_url=http%3A%2F%2Fwww.1768.com%2F%3Fact%3Ducenter" otitle="PD-彩票投注-我的游戏" otype="button" target="_blank">我的游戏</a>
+            </li>
+            <li class="arrow myhelp noborder">
+                <a href="/index.php?act=novicehelp&st=main" otitle="PD-彩票投注-帮助中心" otype="button" target="_blank">帮助中心<span></span></a>
+                <div class="subnav" style="width: 145px; display: none;">
+                    <ul>
+                        <li>
+                            <a href="/index.php?act=novicehelp&st=main" target="_blank" otitle="PD-彩票投注-帮助中心-新手帮助" otype="button">新手帮助</a>
+                        </li>
+                        <li>
+                            <a href="/index.php?act=playintro&st=main" target="_blank" otitle="PD-彩票投注-帮助中心-玩法介绍" otype="button">玩法介绍</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"  class="caipiaoqa" otitle="PD-彩票投注-帮助中心-在线客服" otype="button">在线客服</a>
+                        </li>
+                        <li style="width:auto">
+                             客服电话：4001081768
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li style="display: none;">
+                <a href="http://caipiao.1768.com/index.php?act=login&st=sendGameSSOProvider&go_url=http%3A%2F%2Fgamebbs.wanlitong.com%2Fforum.php%3Fgid%3D39" otitle="PD-彩票投注-论坛" otype="button" target="_blank">论坛</a>
+            </li>
+            <li class="noborder emphasize">
+                <!--<a href="/oldindex.shtml"  target="_blank" otitle="PD-彩票投注-切换旧版" otype="button">切换旧版</a>-->
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="channel-nav">
+    <div class="w1100 clrfix">
+        <div class="nav-qa"><a href="javascript:void(0);" class="caipiaoqa">客服热线：4001081768</a></div>
+    </div>
+    <div class="w1100 clrfix">
+            <div class="logo  "><a href="http://caipiao.1768.com" otitle="PD-彩票投注-平安彩票"  otype="button">平安彩票</a></div>
+                            <div class="channel lottery"><a href="/index.php?act=layout&st=gcdt&cur=lotteryhall" target="_blank">彩票投注</a></div>
+                        <ul class="main-menu clrfix">
+                                    <li><a target="_blank"  otitle="PD-彩票投注-自由市场"  otype="button" title="自由市场" href="/index.php?act=freemarket_home&st=main">自由市场</a></li>
+                                    <li><a target="_blank"  otitle="PD-彩票投注-彩交所"  otype="button" title="彩交所" href="/index.php?act=exchange_home">彩交所</a><i class="sloganC"></i></li>
+                            </ul>
+            <div><a href="/?act=mobile" otitle="PD-彩票投注-扫码领彩" otype="button" target="_blank" class="navmplottery" title="扫码领彩">扫码领彩</a></div>
+            <div class="link-game"><a href="http://caipiao.1768.com/index.php?act=login&st=sendGameSSOProvider&go_url=http%3A%2F%2Fwww.1768.com"  otitle="PD-彩票投注-1768游戏" otype="button" target="_blank">1768游戏</a></div>
+    </div>
+</div>
+
+
+<div class="m-header-nav">
+    <div class="m-nav-type">
+        <div class="u-type-box w1000">
+            <div class="u-type-list clearfix">
+                		           <div class="u-cont">
+	                    <a href="index.php?act=jczq&amp;st=main&amp;pid=25" otype="button" otitle="彩票投资-导航栏-竞彩足球">
+	                        <span class="u-icon u-type-photo  icon-type1 " ></span>
+	                        <p class="u-name">竞彩足球  </p>
+	                        <p class="u-info">返奖率最高73%</p>
+	                    </a>
+	                </div>
+			    		           <div class="u-cont">
+	                    <a href="index.php?act=jclq&amp;st=main&amp;pid=35" otype="button" otitle="彩票投资-导航栏-竞彩篮球">
+	                        <span class="u-icon u-type-photo  icon-type2 " ></span>
+	                        <p class="u-name">竞彩篮球  </p>
+	                        <p class="u-info">只猜胜负易中奖</p>
+	                    </a>
+	                </div>
+			    		           <div class="u-cont">
+	                    <a href="index.php?act=order_ssq&amp;pid=200" otype="button" otitle="彩票投资-导航栏-双色球">
+	                        <span class="u-icon u-type-photo  icon-type3 " ></span>
+	                        <p class="u-name">双色球  <i class="jia"></i></p>
+	                        <p class="u-info">2元赢取1000万</p>
+	                    </a>
+	                </div>
+			    		           <div class="u-cont">
+	                    <a href="index.php?act=order_dlt&amp;pid=51" otype="button" otitle="彩票投资-导航栏-大乐透">
+	                        <span class="u-icon u-type-photo  icon-type4 " ></span>
+	                        <p class="u-name">大乐透   <i class="hot"></i> </p>
+	                        <p class="u-info">3元最高1600万</p>
+	                    </a>
+	                </div>
+			    		           <div class="u-cont">
+	                    <a href="index.php?act=order_gd11x5&amp;pid=100" otype="button" otitle="彩票投资-导航栏-广东11选5">
+	                        <span class="u-icon u-type-photo  icon-type5 " ></span>
+	                        <p class="u-name">广东11选5  </p>
+	                        <p class="u-info">10分钟中10万</p>
+	                    </a>
+	                </div>
+			    		           <div class="u-cont">
+	                    <a href="javascript:;" otype="button" otitle="彩票投资-导航栏-快3">
+	                        <span class="u-icon u-type-photo  icon-type6 " ></span>
+	                        <p class="u-name">快3  </p>
+	                        <p class="u-info">暂停销售</p>
+	                    </a>
+	                </div>
+			                </div>
+            <div class="m-mor-box">
+                <div class="u-mor-btn">
+                    <div class="u-txt" otitle="彩票投资-导航栏-更多玩法" otype="button">更多玩法</div>
+                    <div class="u-up-show"></div>
+                </div>
+                <div class="m-mor-cont">
+                                            <div class="u-cont-box  one  ">
+                            <div class="u-tit" otitle="彩票投资-导航栏-更多玩法-竞彩足球" otype="button" >竞彩足球</div>
+                            <ul class="clearfix">
+                                                            <li><a href="index.php?act=jczq&amp;st=main&amp;pid=25" otype="button" otitle="彩票投资-导航栏-更多玩法-竞彩足球（混合过关）" >混合过关 </a></li>
+                                                            <li><a href="index.php?act=jczq&amp;st=main&amp;pid=20" otype="button" otitle="彩票投资-导航栏-更多玩法-竞彩足球（胜平负）" >胜平负 </a></li>
+                                                            <li><a href="index.php?act=jczq&amp;st=main&amp;pid=26" otype="button" otitle="彩票投资-导航栏-更多玩法-竞彩足球（让球胜平负）" >让球胜平负 </a></li>
+                                                            <li><a href="index.php?act=jczq&amp;st=main&amp;pid=21" otype="button" otitle="彩票投资-导航栏-更多玩法-竞彩足球（比分）" >比分 </a></li>
+                                                                                        <li><a href="/index.php?act=huodong_hdgddg" otype="button" otitle="彩票投资-导航栏-更多玩法-竞彩足球（单关固定）" >单关固定  </a></li>
+                                <li><a href="/index.php?act=jczq&st=main&pid=2521" otype="button" otitle="彩票投资-导航栏-更多玩法-竞彩足球（二选一）" >二选一  </a></li>
+                                <li><a href="/index.php?act=layout&st=jczq&showmem=1&fix=1&pid=20&callbackurl=aHR0cDovLzViaXlpbmcud2FubGl0b25nLmNvbS9sb3R0ZXJ5cy9qY3pxL3NwZl9kZ3A=&cur=dgxuanhao" otype="button" otitle="彩票投资-导航栏-更多玩法-竞彩足球（单关配）" >单关配  </a></li>
+                                                        </ul>
+                        </div>
+                                            <div class="u-cont-box  ">
+                            <div class="u-tit" otitle="彩票投资-导航栏-更多玩法-竞彩篮球" otype="button" >竞彩篮球</div>
+                            <ul class="clearfix">
+                                                            <li><a href="index.php?act=jclq&amp;st=main&amp;pid=35" otype="button" otitle="彩票投资-导航栏-更多玩法-竞彩篮球（混合过关）" >混合过关 </a></li>
+                                                            <li><a href="index.php?act=jclq&amp;st=main&amp;pid=30" otype="button" otitle="彩票投资-导航栏-更多玩法-竞彩篮球（胜负）" >胜负 </a></li>
+                                                            <li><a href="index.php?act=jclq&amp;st=main&amp;pid=31" otype="button" otitle="彩票投资-导航栏-更多玩法-竞彩篮球（让分胜负）" >让分胜负 </a></li>
+                                                            <li><a href="index.php?act=jclq&amp;st=main&amp;pid=33" otype="button" otitle="彩票投资-导航栏-更多玩法-竞彩篮球（大小分）" >大小分 </a></li>
+                                                            <li><a href="index.php?act=jclq&amp;st=main&amp;pid=32" otype="button" otitle="彩票投资-导航栏-更多玩法-竞彩篮球（胜分差）" >胜分差 </a></li>
+                                                                                    </ul>
+                        </div>
+                                            <div class="u-cont-box  ">
+                            <div class="u-tit" otitle="彩票投资-导航栏-更多玩法-北京单场" otype="button" >北京单场</div>
+                            <ul class="clearfix">
+                                                            <li><a href="./index.php?act=bjdc&amp;st=main&amp;pid=3" otype="button" otitle="彩票投资-导航栏-更多玩法-北京单场（胜负过关）" >胜负过关  <i class="hot"></i> </a></li>
+                                                            <li><a href="index.php?act=bjdc&amp;st=main&amp;pid=5" otype="button" otitle="彩票投资-导航栏-更多玩法-北京单场（胜平负）" >胜平负 </a></li>
+                                                            <li><a href="index.php?act=bjdc&amp;st=main&amp;pid=9" otype="button" otitle="彩票投资-导航栏-更多玩法-北京单场（单场比分）" >单场比分 </a></li>
+                                                            <li><a href="index.php?act=bjdc&amp;st=main&amp;pid=8" otype="button" otitle="彩票投资-导航栏-更多玩法-北京单场（总进球数）" >总进球数 </a></li>
+                                                            <li><a href="index.php?act=bjdc&amp;st=main&amp;pid=6" otype="button" otitle="彩票投资-导航栏-更多玩法-北京单场（上下单双）" >上下单双 </a></li>
+                                                            <li><a href="index.php?act=bjdc&amp;st=main&amp;pid=7" otype="button" otitle="彩票投资-导航栏-更多玩法-北京单场（半全场）" >半全场 </a></li>
+                                                                                    </ul>
+                        </div>
+                                            <div class="u-cont-box  ">
+                            <div class="u-tit" otitle="彩票投资-导航栏-更多玩法-足彩" otype="button" >足彩</div>
+                            <ul class="clearfix">
+                                                            <li><a href="javascript:;" otype="button" otitle="彩票投资-导航栏-更多玩法-足彩（14场胜负彩）" >14场胜负彩 </a></li>
+                                                            <li><a href="javascript:;" otype="button" otitle="彩票投资-导航栏-更多玩法-足彩（任选9场）" >任选9场 </a></li>
+                                                            <li><a href="javascript:;" otype="button" otitle="彩票投资-导航栏-更多玩法-足彩（4场进球彩）" >4场进球彩 </a></li>
+                                                            <li><a href="javascript:;" otype="button" otitle="彩票投资-导航栏-更多玩法-足彩（6场半全场）" >6场半全场 </a></li>
+                                                                                    </ul>
+                        </div>
+                                        <div class="close-mor"><span class="btn-up" otype="button" otitle="彩票投资-导航栏-更多玩法-收起">收起<em></em></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="m-nav-way">
+        <div class="u-way-box w1000">
+            <ul class="u-way-list clearfix">
+                                    <li class="u-cont"><a href="index.php?act=bjdc&amp;st=main&amp;pid=5" otype="button" otitle="彩票投资-导航栏-北京单场">北京单场 </a></li>
+                                    <li class="u-cont"><a href="javascript:;" otype="button" otitle="彩票投资-导航栏-足彩">足彩 </a></li>
+                                    <li class="u-cont"><a href="index.php?act=order_qlc&amp;pid=202" otype="button" otitle="彩票投资-导航栏-七乐彩">七乐彩 </a></li>
+                                    <li class="u-cont"><a href="index.php?act=order_3D&amp;pid=201" otype="button" otitle="彩票投资-导航栏-福彩3D">福彩3D </a></li>
+                                    <li class="u-cont"><a href="index.php?act=order_qxc&amp;pid=52" otype="button" otitle="彩票投资-导航栏-七星彩">七星彩 </a></li>
+                                    <li class="u-cont"><a href="index.php?act=order_pl3&amp;pid=54" otype="button" otitle="彩票投资-导航栏-排列3">排列3 </a></li>
+                                    <li class="u-cont"><a href="index.php?act=order_pl5&amp;pid=53" otype="button" otitle="彩票投资-导航栏-排列5">排列5 </a></li>
+                                    <li class="u-cont"><a href="javascript:;" otype="button" otitle="彩票投资-导航栏-江西11选5">江西11选5  <i class="hot"></i> </a></li>
+                                    <li class="u-cont"><a href="index.php?act=order_cqssc&amp;pid=102" otype="button" otitle="彩票投资-导航栏-重庆时时彩">重庆时时彩 </a></li>
+                                    <li class="u-cont"><a href="javascript:;" otype="button" otitle="彩票投资-导航栏-快乐十分">快乐十分 </a></li>
+                            </ul>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+//选号投注，购买套餐，我的订单选项切换
+$(function(){
+	//更多玩法
+    !function(){
+        var $mor = $('.m-mor-box');
+        var $btn = $mor.find('.u-mor-btn');
+        var $cont = $mor.find('.m-mor-cont');
+        var $close = $cont.find('.btn-up');
+        $btn.on('click',function(){
+            $btn.hide();
+            $cont.slideDown();
+        });
+        $close.on('click',function(){
+            $cont.slideUp('fast',function(){
+                $cont.hide();
+                $btn.show();
+            });
+        });
+    }();
+	
+	//点击我的订单
+	$('.invest_my_order_list').live('click',function(){
+        $('#auto_commit_btn_class').val('invest_my_order_list');
+		var lottery_type_id='' || '2521';
+		getUserOrderListFramework(lottery_type_id);
+	});
+	
+	var isBiyingPage = '';
+    $('.conmmon-type-tab > li').live('click',function(){
+    	//获取标签页对应的模块
+    	var match_box_id = $(this).attr('match_box_id');
+        if(match_box_id){
+        	//处理选中高亮样式
+            $('.conmmon-type-tab > li').removeClass('cur');
+            $(this).addClass('cur');
+            //隐藏其他模块，显示当前标签卡对应的模块
+            $('.conmmon-type-tab-box').hide();
+            
+        	$('#'+match_box_id).show();
+        	$('.focusMatch').show();
+            if(match_box_id == 'chose_num_bet_box'){
+                $('.m-tab-box').show();
+                $('.resIntroSection').show();
+                $('.res-intro-section').show();
+            }else{
+                if(match_box_id == 'my_order_list'){
+                    $('.resIntroSection').hide();
+                    $('.res-intro-section').hide();
+                    $('.focusMatch').hide();
+                    //嵌必赢页面，关闭iframe
+                    if(isBiyingPage){
+                    	$('.invest_fixed').hide();
+                    }
+                }else{
+                    $('.resIntroSection').show();
+                    $('.res-intro-section').show();
+                }
+                $('.m-tab-box').hide();
+                
+            }
+        }
+    });
+    
+    //我的订单
+    var curSubTab = '';
+    if(curSubTab == 'my_order_list'){
+        $('.invest_my_order_list').trigger('click');
+    }
+    //异步加载中奖记录
+    var display_prize_record = '1';
+    if(display_prize_record){
+    	var lottery_type_id='' || '2521';
+    	//getPrizeRecord(lottery_type_id);
+    }
+    
+    //是否停售增加弹出框
+    var closesale = '';
+    if(closesale == 'yes'){
+        CP.Util.alertBox('本彩种已停止销售');
+    }
+    
+});
+
+/**
+ * 根据彩种获取订单信息
+ */
+function getPrizeRecord(lottery_type_id){
+	var postdata = {};
+    postdata.lottery_type_id = lottery_type_id;
+    $.ajax({
+        url: '/?act=invest_base&st=jc_lottery_prize_orders',
+        type: "POST",
+        dataType: "json",
+        data: postdata,
+        success: function(data) {
+        	showPrizeRecord(data);
+        }
+    });
+}
+
+function showPrizeRecord(data){
+    var winner_info = '<div class="title">最新中奖：</div><div class="rollingInfos"><div class="rollingCont">';
+    for(var i in data){
+    	var _data = data[i];
+    	var username = "";
+    	var lotteryname = "";
+    	if(!_data.prize){
+    		continue;
+    	}
+    	var _prize = _data.prize.toString().replace("'", "");
+    	
+    	if(_data.name){
+    		username = _data.name.toString().replace("****", "***");
+    	}
+    	else{
+    		username = _data.display_user_name;
+    	}
+    	
+    	if(_data.wanfa){
+    		lotteryname = _data.wanfa;
+        }
+        else{
+        	lotteryname = _data.lottery_name;
+        }
+    	
+        winner_info += '<span class="winfo">'+username+' '+lotteryname+' <em>' +parseFloat(_prize) + '</em>元</span>';                      
+    }
+    winner_info += '</div></div>';
+    $('.winning-notice').html(winner_info);
+    $('.winning-notice').show('normal');
+
+    //创建递归动画
+    var $rollingCont = $(".rollingCont");
+    $rollingCont.css("width","10000px");
+    var function_animate = function(){              
+        var length = $rollingCont.find(".winfo").length,
+            $firstinfo = $rollingCont.find(".winfo:first"),
+            $lastinfo = $rollingCont.find(".winfo:last");
+            
+        $rollingCont.animate({
+            "left" : "-=" + $firstinfo.outerWidth(true)
+        },5000,function(){
+            $rollingCont.append('<span class="winfo">' + $firstinfo.html() + '</span>');
+            $firstinfo.remove();
+            $rollingCont.css("left",0);
+            
+            setTimeout(function(){function_animate();},1000);
+        });
+    };
+    
+    function_animate();
+}
+
+/**
+ * 获取用户订单
+ */
+function getUserOrderListFramework(lottery_type_id){
+	var postdata = {};
+    postdata.isAjax = '0';
+    postdata.lottery_type_id = lottery_type_id;
+    $.ajax({
+        url: '/?act=invest_base&st=view_user_order_list',
+        type: "POST",
+        dataType: "json",
+        async:false,
+        data: postdata,
+        success: function(resp) {
+            if(resp.errCode == 0){
+                $('#my_order_list').empty().html(resp.data);
+            }else if (resp.errCode == -1011){
+            	var extraPara = '';
+            	var curSubTab = getUrlParam('curSubTab');
+            	if(curSubTab != 'my_order_list'){
+            		extraPara = '&curSubTab=my_order_list';
+            	}
+                wanlitong_login(top.location.href+extraPara);
+                
+                //插入默认样式
+                if($(".default_order_list").length == 0){
+                	$("#my_order_list").append('<div class="default_order_list"><a href="javascript:;" class="btnOrderLogin">请登录后查看</a></div>');
+
+                    //登录查看订单
+                    $(".btnOrderLogin").unbind().click(function(){
+                        var _extraPara = '';
+                        var _curSubTab = getUrlParam('curSubTab');
+                        if(_curSubTab != 'my_order_list'){
+                          _extraPara = '&curSubTab=my_order_list';
+                        }
+                        wanlitong_login(top.location.href+_extraPara);
+                        
+                        return false;
+                    });
+                }
+            }else{
+                $('#my_order_list').empty().html(resp.data);
+            }
+        }
+    });
+}
+
+/**
+ * 获取浏览器请求参数
+ */
+function getUrlParam (name){
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if(r != null){
+        return unescape(r[2]);
+    }
+    return null;
+}
+
+
+</script>
+
+<!-- <div  class="w1000" id="page-position">您的位置：<a href="/">首页</a> &gt; <a href="/index.php?act=layout&st=gcdt&cur=lotteryhall">购彩大厅</a> &gt;  <span class="saffron">竞彩足球</span></div> -->
+<div class="content-wrapper w1000">
+    <div class="main-wrapper  w1000 clearfix">
+    
+        
+        
+<div class="winning-notice" style="display: none;"></div>
+        
+        
+        
+        
+<div class="common-kind-head gd-m1 clearfix">
+   <div class="f-l kind-area">
+        <div class="kind-area-left-box f-l font14px">
+            <a class="kind-logo jczq f-l" href="javascript:void(0);">竞彩足球</a>
+            <div class="kind-info">
+                <p class="single"> 猜一场,易中奖,返奖率高达87%。  彩果以比赛90分钟(含伤停补时)的结果为准，不含加时赛和点球大战。</p>
+            </div>
+         </div>
+    </div>
+    
+        
+    
+    <ul class="conmmon-type-tab">
+    
+        <li  class="one cur" match_box_id='chose_num_bet_box'  ><a href="/index.php?act=jczq&st=main&pid=25" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注" otype="button" >过关投注</a></li>
+        <li  ><a href="/index.php?act=jczq&st=main&pid=20&danguan=1" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-单关投注" otype="button">单关投注</a></li>
+        <!--
+        <li  ><a href="/?act=layout&st=jczq&showmem=1&fix=1&pid=20&callbackurl=aHR0cDovLzViaXlpbmcuMTc2OC5jb20vbG90dGVyeXMvamN6cS9zcGZfZGdw&cur=dgxuanhao" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-单关配投注" otype="button">单关配投注</a></li>
+        <li  ><a href="/?act=layout&st=jczq&showmem=1&fix=1&pid=25&callbackurl=aHR0cDovLzViaXlpbmcuMTc2OC5jb20vbG90dGVyeXMvamN6cS9odW5oZV9kYW5zaGk=&cur=danshi" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-单式上传" otype="button">单式上传</a></li>
+        -->
+        <li class="conmmon-type-tab-item " ><a href="/index.php?act=freemarket_home&st=main" target="_blank" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-跟着高手买" otype="button">跟着高手买</a></li>
+                    <li class="invest_my_order_list conmmon-type-tab-item" match_box_id="my_order_list" otitle="彩票投资-竞足-我的订单 " otype="button">我的订单</li>
+                
+        
+    </ul>
+    
+    
+    <div class="m-tab-box">
+        <ul class="common-menu kind-menu font14px">
+        
+                    <li  class="one"  ><a  otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-混合过关" otype="button"  href="/index.php?act=jczq&st=main&pid=25"  >混合过关</a></li>
+            <li  ><a  otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-胜平负" otype="button"  href="/index.php?act=jczq&st=main&pid=20"  >胜平负</a></li>
+            <li  ><a  otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-让球胜平负" otype="button"  href="/index.php?act=jczq&st=main&pid=26" >让球胜平负</a></li>
+            <li  ><a  otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-比分" otype="button"   href="/index.php?act=jczq&st=main&pid=21" >比分</a></li>
+            <li  ><a  otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-总进球数" otype="button"   href="/index.php?act=jczq&st=main&pid=22"  >总进球数</a></li>
+            <li  ><a  otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-半全场" otype="button"   href="/index.php?act=jczq&st=main&pid=23"  >半全场</a></li>
+            <li  class="selected"  ><a   href="javascript:;"  otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一" otype="button">二选一</a></li>
+         <!--   <li><a  otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-猜冠军" otype="button" href="/index.php?act=layout&st=jczq&showmem=1&fix=0&pid=24&callbackurl=aHR0cDovLzViaXlpbmcud2FubGl0b25nLmNvbS9Mb3R0ZXJ5cy9ndWFueWEvb3V6aG91X2dq" target="_blank">猜冠军</a></li>-->
+                </ul>
+
+        <ul class="sub-kind-menu">
+            <!-- <li><a href="/?act=zqcenter&st=main&cur=peilve&showmem=1&fix=1&callbackurl=aHR0cDovL3dhbmxpdG9uZy5kYXRhLmVycjViaXlpbmcuY29tL3pxY2VudGVyL2JmL3d6" target="_blank" otitle="彩票投资-竞彩足球-竞彩足球页头区-足球比分" otype="button">足球比分</a></li>
+            <li><a href="/?act=zqcenter&st=main&cur=peilve&showmem=1&fix=1&callbackurl=aHR0cDovL3dhbmxpdG9uZy5kYXRhLmVycjViaXlpbmcuY29tL3pxY2VudGVyL2pzenMvanpfamN6cQ==" target="_blank" otitle="彩票投资-竞彩足球-竞彩足球页头区-即时指数" otype="button">即时指数</a></li>
+            <li><a href="/?act=zqcenter&st=main&cur=saisi&showmem=1&fix=1&callbackurl=aHR0cDovL3dhbmxpdG9uZy5kYXRhLmVycjViaXlpbmcuY29tL3pxY2VudGVyL3psay8=" target="_blank" otitle="彩票投资-竞彩足球-竞彩足球页头区-联赛资料" otype="button">联赛资料</a></li>
+            <li><a href="/?act=zqcenter&st=main&cur=qiudui&showmem=1&fix=1&callbackurl=aHR0cDovL3dhbmxpdG9uZy5kYXRhLmVycjViaXlpbmcuY29tL3pxY2VudGVyL3psay90ZWFtX2xpc3Q=" target="_blank" otitle="彩票投资-竞彩足球-竞彩足球页头区-足球球队" otype="button">足球球队</a></li> -->
+          <!--  <li><a href="http://info.sporttery.cn/livescore/fb_livescore.html" target="_blank" otitle="彩票投资-竞彩足球-竞彩足球页头区-足球比分" otype="button">足球比分</a></li>
+            <li><a href="http://info.sporttery.cn/football/hhad_list.php" target="_blank" otitle="彩票投资-竞彩足球-竞彩足球页头区-联赛资料" otype="button">联赛资料</a></li>
+            <li><a href="http://info.sporttery.cn/football/history/data_center.php" target="_blank" otitle="彩票投资-竞彩足球-竞彩足球页头区-足球球队" otype="button">足球球队</a></li>-->
+            <li><a href="/index.php?act=kjgg&st=jczq_detail&pid=jczq" target="_blank" otitle="彩票投资-竞彩足球-竞彩足球页头区-开奖公告" otype="button">开奖公告</a></li>
+            <li><a href="/index.php?act=playintro&st=main&id=25&cur=guize" target="_blank" otitle="彩票投资-竞彩足球-竞彩足球页头区-玩法说明" otype="button">玩法说明</a></li>
+        </ul>                
+    </div>
+    
+</div>
+
+
+    	    	        <div class="focusMatch"><input id="hot_match" type="checkbox" disabled="true" > 显示焦点赛事</div>
+	        
+
+        
+    
+           
+        <div id="chose_num_bet_box" class="conmmon-type-tab-box" >
+    
+        <div class="f-l left-wrapper">
+            <div class="game-matrix">
+                              
+                <div class="martrix-header-wrapper">
+                    <table class="table-matrix martrix-header" cellspacing="0" cellpadding="0">
+                        <tr class="fixed-width">
+                               <th class="game-no"></th>
+                               <th class="game-time"></th>
+                               <th class="home-team"></th>
+                               <th class="visiting-team"></th>
+                               <th class="average-pv-title"></th>
+                               <th class="analysis"></th>
+                               <th class="odds"></th>
+                               <th class="odds"></th>
+                               <th class="odds last-cell"></th>
+                            </tr>
+                            
+                        <tr>
+                            <th class="game-no" rowspan="2">
+                                <div class="filter-wrapper game-filter-wrapper clearfix">
+                                    <div class="pop-menu-btn pop-btn-normal">
+                                        <span>赛事筛选</span>
+                                    </div>
+                                    
+                                    <!--<div class="hidden-info">
+                                         <span>已隐藏 <em>0</em> 场赛事 </span><a href="javascript:void(0);" class="recover" style="display:none;">恢复</a>
+                                    </div>-->
+                                    
+                                    <div style="display:none;" class="pop-layer">
+                                        <div class="pop-content">
+                                            <div class="league-title clearfix">
+                                                <span>赛事筛选</span>
+                                                <span class="league-qiuck-choose"><a href="javascript:void(0);" class="allSelected">全选</a><i> / </i><a href="javascript:void(0);"  class="inverseSelected">反选</a></span>
+                                            </div>
+                                            <ul class="league-list clearfix">
+                                                                                                <li class="union-league"><label><input type="checkbox" checked="checked"  value="union">五大联赛</label></li>
+                                                                                                                                                    <li><label><input type="checkbox" checked="checked" value="南美解放">南美解放</label></li>
+                                                                                                    <li><label><input type="checkbox" checked="checked" value="墨西哥超">墨西哥超</label></li>
+                                                                                                    <li><label><input type="checkbox" checked="checked" value="巴西杯">巴西杯</label></li>
+                                                                                                    <li><label><input type="checkbox" checked="checked" value="德国乙级">德国乙级</label></li>
+                                                                                                    <li><label><input type="checkbox" checked="checked" value="dejia">德甲</label></li>
+                                                                                                    <li><label><input type="checkbox" checked="checked" value="智利甲级">智利甲级</label></li>
+                                                                                                    <li><label><input type="checkbox" checked="checked" value="比利时甲">比利时甲</label></li>
+                                                                                                    <li><label><input type="checkbox" checked="checked" value="法国乙级">法国乙级</label></li>
+                                                                                                    <li><label><input type="checkbox" checked="checked" value="fajia">法甲</label></li>
+                                                                                                    <li><label><input type="checkbox" checked="checked" value="澳大利亚">澳大利亚</label></li>
+                                                                                                    <li><label><input type="checkbox" checked="checked" value="瑞典超级">瑞典超级</label></li>
+                                                                                                    <li><label><input type="checkbox" checked="checked" value="美国职业">美国职业</label></li>
+                                                                                                    <li><label><input type="checkbox" checked="checked" value="英格兰冠">英格兰冠</label></li>
+                                                                                                    <li><label><input type="checkbox" checked="checked" value="英格兰甲">英格兰甲</label></li>
+                                                                                                    <li><label><input type="checkbox" checked="checked" value="yingchao">英超</label></li>
+                                                                                                    <li><label><input type="checkbox" checked="checked" value="荷兰乙级">荷兰乙级</label></li>
+                                                                                                    <li><label><input type="checkbox" checked="checked" value="荷兰甲级">荷兰甲级</label></li>
+                                                                                                    <li><label><input type="checkbox" checked="checked" value="葡萄牙超">葡萄牙超</label></li>
+                                                                                                    <li><label><input type="checkbox" checked="checked" value="xijia">西甲</label></li>
+                                                                                                    <li><label><input type="checkbox" checked="checked" value="阿根廷甲">阿根廷甲</label></li>
+                                                                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </th>
+                            <th class="game-time" ><span class="show-by-game-time">比赛时间</span></th>
+                            <th class="home-team" rowspan="2">[排名]主队</th>
+                            <th class="visiting-team" rowspan="2">客队[排名]</th>
+                            
+                            <th   rowspan="2" class="average-pv-title">二选一投注区</th>
+                            <th class="analysis" rowspan="2">分析</th>
+                            <th colspan="3" class="odds-title b-bottom">
+                                <div class="filter-wrapper pv-filter-wrapper clearfix">
+                                    <div class="pop-menu-btn pop-btn-normal" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-99家平均欧指" otype="button">
+                                        <span>99家平均欧指</span>
+                                    </div>
+                                    
+                                    
+                                    <div style="display:none;" class="pop-layer">
+                                        <div class="pop-content">
+                                            <ul class="pv-list">
+                                                <li>
+                                                    <dl class="clr-fix">
+                                                        <dt>欧指</dt>
+                                                        <dd><label><input type="radio" checked="checked" value="11" name="pv-filter-chx" data-index-name="99家平均欧指" />99家平均欧指</label></dd>
+                                                        <dd><label><input type="radio" value="12" name="pv-filter-chx" data-index-name="威廉希尔欧指" />威廉希尔欧指</label></dd>
+                                                        <dd><label><input type="radio" value="13" name="pv-filter-chx" data-index-name="立博欧指" />立博欧指</label></dd>
+                                                        <dd><label><input type="radio" value="14" name="pv-filter-chx" data-index-name="bet365欧指" />bet365欧指</label></dd>
+                                                        <dd><label><input type="radio" value="15" name="pv-filter-chx" data-index-name="澳门彩票欧指" />澳门彩票欧指</label></dd>
+                                                        <dd><label><input type="radio" value="16" name="pv-filter-chx" data-index-name="bwin欧指" />bwin欧指</label></dd>
+                                                    </dl>
+                                                </li>
+                                                
+                                                <li>
+                                                    <dl class="clr-fix">
+                                                        <dt>亚盘</dt>
+                                                        <dd><label><input type="radio" value="21" name="pv-filter-chx" data-index-name="澳门彩票亚盘" />澳门彩票亚盘</label></dd>
+                                                        <dd><label><input type="radio" value="22" name="pv-filter-chx" data-index-name="立博亚盘" />立博亚盘</label></dd>
+                                                        <dd><label><input type="radio" value="23" name="pv-filter-chx" data-index-name="bt365亚盘" />bt365亚盘</label></dd>
+                                                        <dd><label><input type="radio" value="24" name="pv-filter-chx" data-index-name="金宝博亚盘" />金宝博亚盘</label></dd>
+                                                        
+                                                    </dl>
+                                                </li>
+                                                
+                                                <li>
+                                                    <dl class="clr-fix">
+                                                        <dt>概率</dt>
+                                                        <dd><label><input type="radio" value="31" name="pv-filter-chx" data-index-name="99家平均概率" />99家平均概率</label></dd>
+                                                        <dd><label><input type="radio" value="32" name="pv-filter-chx" data-index-name="威廉希尔概率" />威廉希尔概率</label></dd>
+                                                        <dd><label><input type="radio" value="33" name="pv-filter-chx" data-index-name="立博概率" />立博概率</label></dd>
+                                                        <dd><label><input type="radio" value="34" name="pv-filter-chx" data-index-name="bet365概率" />bet365概率</label></dd>
+                                                        <dd><label><input type="radio" value="36" name="pv-filter-chx" data-index-name="澳门彩票概率" />澳门彩票概率</label></dd>
+                                                        <dd><label><input type="radio" value="35" name="pv-filter-chx" data-index-name="bwin概率" />bwin概率</label></dd>
+                                                    </dl>
+                                                </li>
+                                                
+                                                <li>
+                                                    <dl class="clr-fix">
+                                                        <dt>凯利</dt>
+                                                        <dd><label><input type="radio" value="41" name="pv-filter-chx" data-index-name="99家平均凯利" />99家平均凯利</label></dd>
+                                                        <dd><label><input type="radio" value="42" name="pv-filter-chx" data-index-name="威廉希尔凯利" />威廉希尔凯利</label></dd>
+                                                        <dd><label><input type="radio" value="43" name="pv-filter-chx" data-index-name="立博凯利" />立博凯利</label></dd>
+                                                        <dd><label><input type="radio" value="44" name="pv-filter-chx" data-index-name="bet365凯利" />bet365凯利</label></dd>
+                                                        <dd><label><input type="radio" value="46" name="pv-filter-chx" data-index-name="澳门彩票凯利" />澳门彩票凯利</label></dd>
+                                                        <dd><label><input type="radio" value="45" name="pv-filter-chx" data-index-name="bwin凯利" />bwin凯利</label></dd>
+                                                    </dl>
+                                                </li>
+                                                
+                                                <li>
+                                                    <dl class="clr-fix">
+                                                        <dt>赔付率</dt>
+                                                        <dd><label><input type="radio" value="51" name="pv-filter-chx" data-index-name="99家平均赔付率" />99家平均赔付率</label></dd>
+                                                        <dd><label><input type="radio" value="52" name="pv-filter-chx" data-index-name="威廉希尔赔付率" />威廉希尔赔付率</label></dd>
+                                                        <dd><label><input type="radio" value="53" name="pv-filter-chx" data-index-name="立博赔付率" />立博赔付率</label></dd>
+                                                        <dd><label><input type="radio" value="54" name="pv-filter-chx" data-index-name="bet365赔付率" />bet365赔付率</label></dd>
+                                                        <dd><label><input type="radio" value="56" name="pv-filter-chx" data-index-name="澳门彩票赔付率" />澳门彩票赔付率</label></dd>
+                                                        <dd><label><input type="radio" value="55" name="pv-filter-chx" data-index-name="bwin赔付率" />bwin赔付率</label></dd>
+                                                    </dl>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </th>
+                         </tr>
+                         <tr>
+                             <th class="game-time"><span class="show-by-end-time selected">停售时间</span></th>
+                             <th class="odds spindex-title">主胜</th>
+                             <th class="odds spindex-title">平</th>
+                             <th class="odds last-cell spindex-title">主负</th>
+                         </tr>
+                    </table>
+                </div>
+                
+                <!--当无赛事列表显示
+                <div class="no-martrix-list">
+                    暂无可投注的赛事
+                </div>
+                -->
+                                <div class="martrix-list-wrapper">
+                    <table class="table-matrix martrix-list" cellspacing="0" cellpadding="0">
+                    
+                                        
+                                                                        <thead>
+                           <tr class="fixed-width">
+                               <th class="league"></th>
+                               <th class="game-time"></th>
+                               <th class="home-team"></th>
+                               <th class="visiting-team"></th>
+                               <th class="average-pv"></th>
+                               <th class="average-pv"></th>
+                               <th class="analysis"></th>
+                               <th class="odds"></th>
+                               <th class="odds"></th>
+                               <th class="odds last-cell"></th>
+                            </tr>
+                           <tr>
+                              <th colspan="10"  class="game-list-title" ><span>2018年04月19日</span><span>周四</span><span>共有18场比赛可投注</span><span><a href="javascript:void(0);" class="swicth-list">隐藏</a></span></th>
+                           </tr>
+                        </thead>
+                        <tbody >
+                                                        <tr class="baskballteam game-item " data-game-id="106925" data-order-index="6" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 荷兰甲级">001 荷兰甲级</a></td>
+                               <td class="game-time"><span class="show-game-time">04-20<br />00:30</span><span class="show-end-time">04-19<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="乌德勒支" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>乌德勒支</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="格罗宁根" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>格罗宁根</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="乌德勒支" league_no="001" league_no_week="周四001" name2="格罗宁根" sp1="1.37" sp2="2.62" numb="106925" handicap="-1" league_name="荷兰甲级联赛" end_time="04-19"><ins>主胜</ins><span>1.37</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="乌德勒支" league_no="001" league_no_week="周四001" name2="格罗宁根" sp1="1.37" sp2="2.62" numb="106925" handicap="-1" league_name="荷兰甲级联赛" end_time="04-19"><ins>客不败</ins><span>2.62</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106926" data-order-index="7" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 瑞典超级">002 瑞典超级</a></td>
+                               <td class="game-time"><span class="show-game-time">04-20<br />01:00</span><span class="show-end-time">04-19<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="哈马比" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>哈马比</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="北雪平" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>北雪平</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="哈马比" league_no="002" league_no_week="周四002" name2="北雪平" sp1="2.14" sp2="1.54" numb="106926" handicap="-1" league_name="瑞典超级联赛" end_time="04-19"><ins>主胜</ins><span>2.14</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="哈马比" league_no="002" league_no_week="周四002" name2="北雪平" sp1="2.14" sp2="1.54" numb="106926" handicap="-1" league_name="瑞典超级联赛" end_time="04-19"><ins>客不败</ins><span>1.54</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106927" data-order-index="8" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 瑞典超级">003 瑞典超级</a></td>
+                               <td class="game-time"><span class="show-game-time">04-20<br />01:00</span><span class="show-end-time">04-19<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="布鲁马波卡纳" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>布鲁马波卡</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="埃尔夫斯堡" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>埃尔夫斯堡</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="布鲁马波卡" league_no="003" league_no_week="周四003" name2="埃尔夫斯堡" sp1="1.60" sp2="2.07" numb="106927" handicap="+1" league_name="瑞典超级联赛" end_time="04-19"><ins>主不败</ins><span>1.60</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="布鲁马波卡" league_no="003" league_no_week="周四003" name2="埃尔夫斯堡" sp1="1.60" sp2="2.07" numb="106927" handicap="+1" league_name="瑞典超级联赛" end_time="04-19"><ins>客胜</ins><span>2.07</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106928" data-order-index="9" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 瑞典超级">004 瑞典超级</a></td>
+                               <td class="game-time"><span class="show-game-time">04-20<br />01:00</span><span class="show-end-time">04-19<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="IFK哥德堡" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>IFK哥德</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="达尔库尔德人" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>达尔库尔德</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="IFK哥德" league_no="004" league_no_week="周四004" name2="达尔库尔德" sp1="1.77" sp2="1.83" numb="106928" handicap="-1" league_name="瑞典超级联赛" end_time="04-19"><ins>主胜</ins><span>1.77</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="IFK哥德" league_no="004" league_no_week="周四004" name2="达尔库尔德" sp1="1.77" sp2="1.83" numb="106928" handicap="-1" league_name="瑞典超级联赛" end_time="04-19"><ins>客不败</ins><span>1.83</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106929" data-order-index="10" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name xijia union">005 西甲</a></td>
+                               <td class="game-time"><span class="show-game-time">04-20<br />01:30</span><span class="show-end-time">04-19<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="阿拉维斯" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>阿拉维斯</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="赫罗纳" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>赫罗纳</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="阿拉维斯" league_no="005" league_no_week="周四005" name2="赫罗纳" sp1="2.17" sp2="1.54" numb="106929" handicap="-1" league_name="西甲" end_time="04-19"><ins>主胜</ins><span>2.17</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="阿拉维斯" league_no="005" league_no_week="周四005" name2="赫罗纳" sp1="2.17" sp2="1.54" numb="106929" handicap="-1" league_name="西甲" end_time="04-19"><ins>客不败</ins><span>1.54</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106930" data-order-index="11" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name xijia union">006 西甲</a></td>
+                               <td class="game-time"><span class="show-game-time">04-20<br />01:30</span><span class="show-end-time">04-19<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="皇家社会" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>皇家社会</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="马德里竞技" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>马德里竞技</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="皇家社会" league_no="006" league_no_week="周四006" name2="马德里竞技" sp1="1.64" sp2="1.97" numb="106930" handicap="+1" league_name="西甲" end_time="04-19"><ins>主不败</ins><span>1.64</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="皇家社会" league_no="006" league_no_week="周四006" name2="马德里竞技" sp1="1.64" sp2="1.97" numb="106930" handicap="+1" league_name="西甲" end_time="04-19"><ins>客胜</ins><span>1.97</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106931" data-order-index="12" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 比利时甲">007 比利时甲</a></td>
+                               <td class="game-time"><span class="show-game-time">04-20<br />02:30</span><span class="show-end-time">04-19<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="布鲁日" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>布鲁日</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="沙勒罗瓦" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>沙勒罗瓦</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="布鲁日" league_no="007" league_no_week="周四007" name2="沙勒罗瓦" sp1="1.29" sp2="2.98" numb="106931" handicap="-1" league_name="比利时甲级联赛" end_time="04-19"><ins>主胜</ins><span>1.29</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="布鲁日" league_no="007" league_no_week="周四007" name2="沙勒罗瓦" sp1="1.29" sp2="2.98" numb="106931" handicap="-1" league_name="比利时甲级联赛" end_time="04-19"><ins>客不败</ins><span>2.98</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106932" data-order-index="13" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name yingchao union">008 英超</a></td>
+                               <td class="game-time"><span class="show-game-time">04-20<br />02:45</span><span class="show-end-time">04-19<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="伯恩利" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>伯恩利</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="切尔西" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>切尔西</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="伯恩利" league_no="008" league_no_week="周四008" name2="切尔西" sp1="1.85" sp2="1.76" numb="106932" handicap="+1" league_name="英超" end_time="04-19"><ins>主不败</ins><span>1.85</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="伯恩利" league_no="008" league_no_week="周四008" name2="切尔西" sp1="1.85" sp2="1.76" numb="106932" handicap="+1" league_name="英超" end_time="04-19"><ins>客胜</ins><span>1.76</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106933" data-order-index="14" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name yingchao union">009 英超</a></td>
+                               <td class="game-time"><span class="show-game-time">04-20<br />02:45</span><span class="show-end-time">04-19<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="莱切斯特城" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>莱切斯特城</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="南安普敦" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>南安普敦</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="莱切斯特城" league_no="009" league_no_week="周四009" name2="南安普敦" sp1="2.10" sp2="1.57" numb="106933" handicap="-1" league_name="英超" end_time="04-19"><ins>主胜</ins><span>2.10</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="莱切斯特城" league_no="009" league_no_week="周四009" name2="南安普敦" sp1="2.10" sp2="1.57" numb="106933" handicap="-1" league_name="英超" end_time="04-19"><ins>客不败</ins><span>1.57</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106934" data-order-index="15" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 英格兰甲">010 英格兰甲</a></td>
+                               <td class="game-time"><span class="show-game-time">04-20<br />02:45</span><span class="show-end-time">04-19<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="布莱克本" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>布莱克本</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="彼得堡联" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>彼得堡联</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="布莱克本" league_no="010" league_no_week="周四010" name2="彼得堡联" sp1="1.34" sp2="2.72" numb="106934" handicap="-1" league_name="英格兰甲级联赛" end_time="04-19"><ins>主胜</ins><span>1.34</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="布莱克本" league_no="010" league_no_week="周四010" name2="彼得堡联" sp1="1.34" sp2="2.72" numb="106934" handicap="-1" league_name="英格兰甲级联赛" end_time="04-19"><ins>客不败</ins><span>2.72</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106936" data-order-index="16" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name xijia union">012 西甲</a></td>
+                               <td class="game-time"><span class="show-game-time">04-20<br />03:30</span><span class="show-end-time">04-19<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="皇家贝蒂斯" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>皇家贝蒂斯</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="拉斯帕尔马斯" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>拉斯帕尔马</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="皇家贝蒂斯" league_no="012" league_no_week="周四012" name2="拉斯帕尔马" sp1="1.24" sp2="3.25" numb="106936" handicap="-1" league_name="西甲" end_time="04-19"><ins>主胜</ins><span>1.24</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="皇家贝蒂斯" league_no="012" league_no_week="周四012" name2="拉斯帕尔马" sp1="1.24" sp2="3.25" numb="106936" handicap="-1" league_name="西甲" end_time="04-19"><ins>客不败</ins><span>3.25</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106937" data-order-index="17" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name xijia union">013 西甲</a></td>
+                               <td class="game-time"><span class="show-game-time">04-20<br />03:30</span><span class="show-end-time">04-19<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="莱万特" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>莱万特</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="马拉加" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>马拉加</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="莱万特" league_no="013" league_no_week="周四013" name2="马拉加" sp1="1.63" sp2="1.96" numb="106937" handicap="-1" league_name="西甲" end_time="04-19"><ins>主胜</ins><span>1.63</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="莱万特" league_no="013" league_no_week="周四013" name2="马拉加" sp1="1.63" sp2="1.96" numb="106937" handicap="-1" league_name="西甲" end_time="04-19"><ins>客不败</ins><span>1.96</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106938" data-order-index="18" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 南美解放">014 南美解放</a></td>
+                               <td class="game-time"><span class="show-game-time">04-20<br />06:15</span><span class="show-end-time">04-19<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="竞技俱乐部" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>竞技俱乐部</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="瓦斯科达伽马" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>瓦斯科达伽</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="竞技俱乐部" league_no="014" league_no_week="周四014" name2="瓦斯科达伽" sp1="1.34" sp2="2.74" numb="106938" handicap="-1" league_name="南美解放者杯" end_time="04-19"><ins>主胜</ins><span>1.34</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="竞技俱乐部" league_no="014" league_no_week="周四014" name2="瓦斯科达伽" sp1="1.34" sp2="2.74" numb="106938" handicap="-1" league_name="南美解放者杯" end_time="04-19"><ins>客不败</ins><span>2.74</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106939" data-order-index="19" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 巴西杯">015 巴西杯</a></td>
+                               <td class="game-time"><span class="show-game-time">04-20<br />06:15</span><span class="show-end-time">04-19<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="圣保罗" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>圣保罗</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="巴拉纳竞技" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>巴拉纳竞技</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="圣保罗" league_no="015" league_no_week="周四015" name2="巴拉纳竞技" sp1="1.59" sp2="2.05" numb="106939" handicap="-1" league_name="巴西杯" end_time="04-19"><ins>主胜</ins><span>1.59</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="圣保罗" league_no="015" league_no_week="周四015" name2="巴拉纳竞技" sp1="1.59" sp2="2.05" numb="106939" handicap="-1" league_name="巴西杯" end_time="04-19"><ins>客不败</ins><span>2.05</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106940" data-order-index="20" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 巴西杯">016 巴西杯</a></td>
+                               <td class="game-time"><span class="show-game-time">04-20<br />06:15</span><span class="show-end-time">04-19<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="维多利亚" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>维多利亚</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="巴西国际" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>巴西国际</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="维多利亚" league_no="016" league_no_week="周四016" name2="巴西国际" sp1="2.32" sp2="1.47" numb="106940" handicap="-1" league_name="巴西杯" end_time="04-19"><ins>主胜</ins><span>2.32</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="维多利亚" league_no="016" league_no_week="周四016" name2="巴西国际" sp1="2.32" sp2="1.47" numb="106940" handicap="-1" league_name="巴西杯" end_time="04-19"><ins>客不败</ins><span>1.47</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106941" data-order-index="21" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 南美解放">017 南美解放</a></td>
+                               <td class="game-time"><span class="show-game-time">04-20<br />08:30</span><span class="show-end-time">04-19<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="利马联盟" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>利马联盟</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="巴兰基亚青年" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>巴兰基亚青</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="利马联盟" league_no="017" league_no_week="周四017" name2="巴兰基亚青" sp1="1.83" sp2="1.75" numb="106941" handicap="+1" league_name="南美解放者杯" end_time="04-19"><ins>主不败</ins><span>1.83</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="利马联盟" league_no="017" league_no_week="周四017" name2="巴兰基亚青" sp1="1.83" sp2="1.75" numb="106941" handicap="+1" league_name="南美解放者杯" end_time="04-19"><ins>客胜</ins><span>1.75</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106942" data-order-index="22" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 南美解放">018 南美解放</a></td>
+                               <td class="game-time"><span class="show-game-time">04-20<br />08:30</span><span class="show-end-time">04-19<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="埃梅莱克" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>埃梅莱克</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="河床" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>河床</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="埃梅莱克" league_no="018" league_no_week="周四018" name2="河床" sp1="1.44" sp2="2.42" numb="106942" handicap="+1" league_name="南美解放者杯" end_time="04-19"><ins>主不败</ins><span>1.44</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="埃梅莱克" league_no="018" league_no_week="周四018" name2="河床" sp1="1.44" sp2="2.42" numb="106942" handicap="+1" league_name="南美解放者杯" end_time="04-19"><ins>客胜</ins><span>2.42</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106943" data-order-index="23" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 南美解放">019 南美解放</a></td>
+                               <td class="game-time"><span class="show-game-time">04-20<br />08:30</span><span class="show-end-time">04-19<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="智利大学" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>智利大学</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="克鲁塞罗" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>克鲁塞罗</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="智利大学" league_no="019" league_no_week="周四019" name2="克鲁塞罗" sp1="2.53" sp2="1.40" numb="106943" handicap="-1" league_name="南美解放者杯" end_time="04-19"><ins>主胜</ins><span>2.53</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="智利大学" league_no="019" league_no_week="周四019" name2="克鲁塞罗" sp1="2.53" sp2="1.40" numb="106943" handicap="-1" league_name="南美解放者杯" end_time="04-19"><ins>客不败</ins><span>1.40</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                    </tbody>
+                                                                                                <thead>
+                           <tr class="fixed-width">
+                               <th class="league"></th>
+                               <th class="game-time"></th>
+                               <th class="home-team"></th>
+                               <th class="visiting-team"></th>
+                               <th class="average-pv"></th>
+                               <th class="average-pv"></th>
+                               <th class="analysis"></th>
+                               <th class="odds"></th>
+                               <th class="odds"></th>
+                               <th class="odds last-cell"></th>
+                            </tr>
+                           <tr>
+                              <th colspan="10"  class="game-list-title" ><span>2018年04月20日</span><span>周五</span><span>共有32场比赛可投注</span><span><a href="javascript:void(0);" class="swicth-list">隐藏</a></span></th>
+                           </tr>
+                        </thead>
+                        <tbody >
+                                                        <tr class="baskballteam game-item " data-game-id="106960" data-order-index="24" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 澳大利亚">001 澳大利亚</a></td>
+                               <td class="game-time"><span class="show-game-time">04-20<br />17:50</span><span class="show-end-time">04-20<br />17:20</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="墨尔本城" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>墨尔本城</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="布里斯班狮吼" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>布里斯班狮</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="墨尔本城" league_no="001" league_no_week="周五001" name2="布里斯班狮" sp1="1.58" sp2="2.09" numb="106960" handicap="-1" league_name="澳大利亚超级联赛" end_time="04-20"><ins>主胜</ins><span>1.58</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="墨尔本城" league_no="001" league_no_week="周五001" name2="布里斯班狮" sp1="1.58" sp2="2.09" numb="106960" handicap="-1" league_name="澳大利亚超级联赛" end_time="04-20"><ins>客不败</ins><span>2.09</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106961" data-order-index="25" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 德国乙级">002 德国乙级</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />00:30</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="不伦瑞克" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>不伦瑞克</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="比勒费尔德" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>比勒费尔德</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="不伦瑞克" league_no="002" league_no_week="周五002" name2="比勒费尔德" sp1="2.13" sp2="1.56" numb="106961" handicap="-1" league_name="德国乙级联赛" end_time="04-20"><ins>主胜</ins><span>2.13</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="不伦瑞克" league_no="002" league_no_week="周五002" name2="比勒费尔德" sp1="2.13" sp2="1.56" numb="106961" handicap="-1" league_name="德国乙级联赛" end_time="04-20"><ins>客不败</ins><span>1.56</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106962" data-order-index="26" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 德国乙级">003 德国乙级</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />00:30</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="菲尔特" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>菲尔特</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="波鸿" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>波鸿</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="菲尔特" league_no="003" league_no_week="周五003" name2="波鸿" sp1="1.54" sp2="2.16" numb="106962" handicap="+1" league_name="德国乙级联赛" end_time="04-20"><ins>主不败</ins><span>1.54</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="菲尔特" league_no="003" league_no_week="周五003" name2="波鸿" sp1="1.54" sp2="2.16" numb="106962" handicap="+1" league_name="德国乙级联赛" end_time="04-20"><ins>客胜</ins><span>2.16</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106963" data-order-index="27" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name fajia union">004 法甲</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />01:30</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="南特" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>南特</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="雷恩" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>雷恩</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="南特" league_no="004" league_no_week="周五004" name2="雷恩" sp1="2.16" sp2="1.55" numb="106963" handicap="-1" league_name="法甲" end_time="04-20"><ins>主胜</ins><span>2.16</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="南特" league_no="004" league_no_week="周五004" name2="雷恩" sp1="2.16" sp2="1.55" numb="106963" handicap="-1" league_name="法甲" end_time="04-20"><ins>客不败</ins><span>1.55</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106964" data-order-index="28" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 法国乙级">005 法国乙级</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />02:00</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="阿雅克肖GFCO" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>阿雅克肖G</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="图尔" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>图尔</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="阿雅克肖G" league_no="005" league_no_week="周五005" name2="图尔" sp1="1.75" sp2="1.87" numb="106964" handicap="-1" league_name="法国乙级联赛" end_time="04-20"><ins>主胜</ins><span>1.75</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="阿雅克肖G" league_no="005" league_no_week="周五005" name2="图尔" sp1="1.75" sp2="1.87" numb="106964" handicap="-1" league_name="法国乙级联赛" end_time="04-20"><ins>客不败</ins><span>1.87</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106965" data-order-index="29" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 法国乙级">006 法国乙级</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />02:00</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="布尔格" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>布尔格</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="尼姆" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>尼姆</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="布尔格" league_no="006" league_no_week="周五006" name2="尼姆" sp1="2.05" sp2="1.61" numb="106965" handicap="+1" league_name="法国乙级联赛" end_time="04-20"><ins>主不败</ins><span>2.05</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="布尔格" league_no="006" league_no_week="周五006" name2="尼姆" sp1="2.05" sp2="1.61" numb="106965" handicap="+1" league_name="法国乙级联赛" end_time="04-20"><ins>客胜</ins><span>1.61</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106966" data-order-index="30" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 法国乙级">007 法国乙级</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />02:00</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="克莱蒙" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>克莱蒙</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="奥尔良" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>奥尔良</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="克莱蒙" league_no="007" league_no_week="周五007" name2="奥尔良" sp1="1.34" sp2="2.73" numb="106966" handicap="-1" league_name="法国乙级联赛" end_time="04-20"><ins>主胜</ins><span>1.34</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="克莱蒙" league_no="007" league_no_week="周五007" name2="奥尔良" sp1="1.34" sp2="2.73" numb="106966" handicap="-1" league_name="法国乙级联赛" end_time="04-20"><ins>客不败</ins><span>2.73</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106967" data-order-index="31" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 法国乙级">008 法国乙级</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />02:00</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="洛里昂" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>洛里昂</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="瓦朗谢纳" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>瓦朗谢纳</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="洛里昂" league_no="008" league_no_week="周五008" name2="瓦朗谢纳" sp1="1.30" sp2="2.95" numb="106967" handicap="-1" league_name="法国乙级联赛" end_time="04-20"><ins>主胜</ins><span>1.30</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="洛里昂" league_no="008" league_no_week="周五008" name2="瓦朗谢纳" sp1="1.30" sp2="2.95" numb="106967" handicap="-1" league_name="法国乙级联赛" end_time="04-20"><ins>客不败</ins><span>2.95</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106968" data-order-index="32" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 法国乙级">009 法国乙级</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />02:00</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="索肖" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>索肖</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="布雷斯特" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>布雷斯特</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="索肖" league_no="009" league_no_week="周五009" name2="布雷斯特" sp1="2.33" sp2="1.46" numb="106968" handicap="-1" league_name="法国乙级联赛" end_time="04-20"><ins>主胜</ins><span>2.33</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="索肖" league_no="009" league_no_week="周五009" name2="布雷斯特" sp1="2.33" sp2="1.46" numb="106968" handicap="-1" league_name="法国乙级联赛" end_time="04-20"><ins>客不败</ins><span>1.46</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106969" data-order-index="33" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 法国乙级">010 法国乙级</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />02:00</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="沙托鲁" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>沙托鲁</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="尼奥尔" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>尼奥尔</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="沙托鲁" league_no="010" league_no_week="周五010" name2="尼奥尔" sp1="1.59" sp2="2.09" numb="106969" handicap="-1" league_name="法国乙级联赛" end_time="04-20"><ins>主胜</ins><span>1.59</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="沙托鲁" league_no="010" league_no_week="周五010" name2="尼奥尔" sp1="1.59" sp2="2.09" numb="106969" handicap="-1" league_name="法国乙级联赛" end_time="04-20"><ins>客不败</ins><span>2.09</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106970" data-order-index="34" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 法国乙级">011 法国乙级</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />02:00</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="朗斯" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>朗斯</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="勒阿弗尔" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>勒阿弗尔</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="朗斯" league_no="011" league_no_week="周五011" name2="勒阿弗尔" sp1="1.99" sp2="1.64" numb="106970" handicap="-1" league_name="法国乙级联赛" end_time="04-20"><ins>主胜</ins><span>1.99</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="朗斯" league_no="011" league_no_week="周五011" name2="勒阿弗尔" sp1="1.99" sp2="1.64" numb="106970" handicap="-1" league_name="法国乙级联赛" end_time="04-20"><ins>客不败</ins><span>1.64</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106971" data-order-index="35" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 法国乙级">012 法国乙级</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />02:00</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="兰斯" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>兰斯</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="阿雅克肖" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>阿雅克肖</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="兰斯" league_no="012" league_no_week="周五012" name2="阿雅克肖" sp1="1.75" sp2="1.84" numb="106971" handicap="-1" league_name="法国乙级联赛" end_time="04-20"><ins>主胜</ins><span>1.75</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="兰斯" league_no="012" league_no_week="周五012" name2="阿雅克肖" sp1="1.75" sp2="1.84" numb="106971" handicap="-1" league_name="法国乙级联赛" end_time="04-20"><ins>客不败</ins><span>1.84</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106972" data-order-index="36" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 法国乙级">013 法国乙级</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />02:00</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="奎维利鲁昂" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>奎维利鲁昂</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="巴黎FC" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>巴黎FC</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="奎维利鲁昂" league_no="013" league_no_week="周五013" name2="巴黎FC" sp1="1.49" sp2="2.29" numb="106972" handicap="+1" league_name="法国乙级联赛" end_time="04-20"><ins>主不败</ins><span>1.49</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="奎维利鲁昂" league_no="013" league_no_week="周五013" name2="巴黎FC" sp1="1.49" sp2="2.29" numb="106972" handicap="+1" league_name="法国乙级联赛" end_time="04-20"><ins>客胜</ins><span>2.29</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106973" data-order-index="37" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 荷兰乙级">014 荷兰乙级</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />02:00</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="坎布尔" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>坎布尔</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="海尔蒙特" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>海尔蒙特</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="坎布尔" league_no="014" league_no_week="周五014" name2="海尔蒙特" sp1="1.31" sp2="2.88" numb="106973" handicap="-1" league_name="荷兰乙级联赛" end_time="04-20"><ins>主胜</ins><span>1.31</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="坎布尔" league_no="014" league_no_week="周五014" name2="海尔蒙特" sp1="1.31" sp2="2.88" numb="106973" handicap="-1" league_name="荷兰乙级联赛" end_time="04-20"><ins>客不败</ins><span>2.88</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106974" data-order-index="38" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 荷兰乙级">015 荷兰乙级</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />02:00</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="格拉夫夏普" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>格拉夫夏普</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="特尔斯达" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>特尔斯达</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="格拉夫夏普" league_no="015" league_no_week="周五015" name2="特尔斯达" sp1="1.35" sp2="2.69" numb="106974" handicap="-1" league_name="荷兰乙级联赛" end_time="04-20"><ins>主胜</ins><span>1.35</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="格拉夫夏普" league_no="015" league_no_week="周五015" name2="特尔斯达" sp1="1.35" sp2="2.69" numb="106974" handicap="-1" league_name="荷兰乙级联赛" end_time="04-20"><ins>客不败</ins><span>2.69</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106975" data-order-index="39" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 荷兰乙级">016 荷兰乙级</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />02:00</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="登博思" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>登博思</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="埃门" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>埃门</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="登博思" league_no="016" league_no_week="周五016" name2="埃门" sp1="1.89" sp2="1.72" numb="106975" handicap="+1" league_name="荷兰乙级联赛" end_time="04-20"><ins>主不败</ins><span>1.89</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="登博思" league_no="016" league_no_week="周五016" name2="埃门" sp1="1.89" sp2="1.72" numb="106975" handicap="+1" league_name="荷兰乙级联赛" end_time="04-20"><ins>客胜</ins><span>1.72</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106976" data-order-index="40" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 荷兰乙级">017 荷兰乙级</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />02:00</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="埃因霍温FC" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>埃因霍温F</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="阿尔梅勒城" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>阿尔梅勒城</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="埃因霍温F" league_no="017" league_no_week="周五017" name2="阿尔梅勒城" sp1="2.12" sp2="1.57" numb="106976" handicap="-1" league_name="荷兰乙级联赛" end_time="04-20"><ins>主胜</ins><span>2.12</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="埃因霍温F" league_no="017" league_no_week="周五017" name2="阿尔梅勒城" sp1="2.12" sp2="1.57" numb="106976" handicap="-1" league_name="荷兰乙级联赛" end_time="04-20"><ins>客不败</ins><span>1.57</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106977" data-order-index="41" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 荷兰乙级">018 荷兰乙级</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />02:00</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="福伦丹" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>福伦丹</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="阿贾克斯青年队" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>阿贾克斯青</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="福伦丹" league_no="018" league_no_week="周五018" name2="阿贾克斯青" sp1="1.63" sp2="2.03" numb="106977" handicap="+1" league_name="荷兰乙级联赛" end_time="04-20"><ins>主不败</ins><span>1.63</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="福伦丹" league_no="018" league_no_week="周五018" name2="阿贾克斯青" sp1="1.63" sp2="2.03" numb="106977" handicap="+1" league_name="荷兰乙级联赛" end_time="04-20"><ins>客胜</ins><span>2.03</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106978" data-order-index="42" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 荷兰乙级">019 荷兰乙级</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />02:00</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="乌德勒支青年队" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>乌德勒支青</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="福图纳锡塔德" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>福图纳锡塔</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="乌德勒支青" league_no="019" league_no_week="周五019" name2="福图纳锡塔" sp1="3.10" sp2="1.27" numb="106978" handicap="+1" league_name="荷兰乙级联赛" end_time="04-20"><ins>主不败</ins><span>3.10</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="乌德勒支青" league_no="019" league_no_week="周五019" name2="福图纳锡塔" sp1="3.10" sp2="1.27" numb="106978" handicap="+1" league_name="荷兰乙级联赛" end_time="04-20"><ins>客胜</ins><span>1.27</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106979" data-order-index="43" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 荷兰乙级">020 荷兰乙级</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />02:00</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="马斯特里赫特" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>马斯特里赫</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="奥斯" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>奥斯</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="马斯特里赫" league_no="020" league_no_week="周五020" name2="奥斯" sp1="1.56" sp2="2.13" numb="106979" handicap="-1" league_name="荷兰乙级联赛" end_time="04-20"><ins>主胜</ins><span>1.56</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="马斯特里赫" league_no="020" league_no_week="周五020" name2="奥斯" sp1="1.56" sp2="2.13" numb="106979" handicap="-1" league_name="荷兰乙级联赛" end_time="04-20"><ins>客不败</ins><span>2.13</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106981" data-order-index="44" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name dejia union">022 德甲</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />02:30</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="门兴格拉德巴赫" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>门兴格拉德</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="沃尔夫斯堡" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>沃尔夫斯堡</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="门兴格拉德" league_no="022" league_no_week="周五022" name2="沃尔夫斯堡" sp1="1.73" sp2="1.88" numb="106981" handicap="-1" league_name="德甲" end_time="04-20"><ins>主胜</ins><span>1.73</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="门兴格拉德" league_no="022" league_no_week="周五022" name2="沃尔夫斯堡" sp1="1.73" sp2="1.88" numb="106981" handicap="-1" league_name="德甲" end_time="04-20"><ins>客不败</ins><span>1.88</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106982" data-order-index="45" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 比利时甲">023 比利时甲</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />02:30</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="聚尔特瓦雷赫姆" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>聚尔特瓦雷</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="科特赖克" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>科特赖克</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="聚尔特瓦雷" league_no="023" league_no_week="周五023" name2="科特赖克" sp1="1.60" sp2="2.07" numb="106982" handicap="-1" league_name="比利时甲级联赛" end_time="04-20"><ins>主胜</ins><span>1.60</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="聚尔特瓦雷" league_no="023" league_no_week="周五023" name2="科特赖克" sp1="1.60" sp2="2.07" numb="106982" handicap="-1" league_name="比利时甲级联赛" end_time="04-20"><ins>客不败</ins><span>2.07</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106983" data-order-index="46" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 英格兰冠">024 英格兰冠</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />02:45</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="米尔沃尔" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>米尔沃尔</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="富勒姆" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>富勒姆</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="米尔沃尔" league_no="024" league_no_week="周五024" name2="富勒姆" sp1="1.67" sp2="1.96" numb="106983" handicap="+1" league_name="英格兰冠军联赛" end_time="04-20"><ins>主不败</ins><span>1.67</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="米尔沃尔" league_no="024" league_no_week="周五024" name2="富勒姆" sp1="1.67" sp2="1.96" numb="106983" handicap="+1" league_name="英格兰冠军联赛" end_time="04-20"><ins>客胜</ins><span>1.96</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106984" data-order-index="47" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name xijia union">025 西甲</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />03:00</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="莱加内斯" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>莱加内斯</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="拉科鲁尼亚" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>拉科鲁尼亚</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="莱加内斯" league_no="025" league_no_week="周五025" name2="拉科鲁尼亚" sp1="2.21" sp2="1.52" numb="106984" handicap="-1" league_name="西甲" end_time="04-20"><ins>主胜</ins><span>2.21</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="莱加内斯" league_no="025" league_no_week="周五025" name2="拉科鲁尼亚" sp1="2.21" sp2="1.52" numb="106984" handicap="-1" league_name="西甲" end_time="04-20"><ins>客不败</ins><span>1.52</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106985" data-order-index="48" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name fajia union">026 法甲</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />03:00</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="第戎" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>第戎</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="里昂" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>里昂</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="第戎" league_no="026" league_no_week="周五026" name2="里昂" sp1="2.95" sp2="1.30" numb="106985" handicap="+1" league_name="法甲" end_time="04-20"><ins>主不败</ins><span>2.95</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="第戎" league_no="026" league_no_week="周五026" name2="里昂" sp1="2.95" sp2="1.30" numb="106985" handicap="+1" league_name="法甲" end_time="04-20"><ins>客胜</ins><span>1.30</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106986" data-order-index="49" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 葡萄牙超">027 葡萄牙超</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />03:30</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="布拉加" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>布拉加</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="马里迪莫" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>马里迪莫</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="布拉加" league_no="027" league_no_week="周五027" name2="马里迪莫" sp1="1.24" sp2="3.30" numb="106986" handicap="-1" league_name="葡萄牙超级联赛" end_time="04-20"><ins>主胜</ins><span>1.24</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="布拉加" league_no="027" league_no_week="周五027" name2="马里迪莫" sp1="1.24" sp2="3.30" numb="106986" handicap="-1" league_name="葡萄牙超级联赛" end_time="04-20"><ins>客不败</ins><span>3.30</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106987" data-order-index="50" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 阿根廷甲">028 阿根廷甲</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />06:00</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="阿根廷青年人" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>阿根廷青年</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="奥林匹奥" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>奥林匹奥</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="阿根廷青年" league_no="028" league_no_week="周五028" name2="奥林匹奥" sp1="1.25" sp2="3.25" numb="106987" handicap="-1" league_name="阿根廷甲级联赛" end_time="04-20"><ins>主胜</ins><span>1.25</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="阿根廷青年" league_no="028" league_no_week="周五028" name2="奥林匹奥" sp1="1.25" sp2="3.25" numb="106987" handicap="-1" league_name="阿根廷甲级联赛" end_time="04-20"><ins>客不败</ins><span>3.25</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106988" data-order-index="51" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 智利甲级">029 智利甲级</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />07:00</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="西班牙联合" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>西班牙联合</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="瓦奇巴托" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>瓦奇巴托</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="西班牙联合" league_no="029" league_no_week="周五029" name2="瓦奇巴托" sp1="2.00" sp2="1.65" numb="106988" handicap="-1" league_name="智利甲级联赛" end_time="04-20"><ins>主胜</ins><span>2.00</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="西班牙联合" league_no="029" league_no_week="周五029" name2="瓦奇巴托" sp1="2.00" sp2="1.65" numb="106988" handicap="-1" league_name="智利甲级联赛" end_time="04-20"><ins>客不败</ins><span>1.65</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106989" data-order-index="52" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 墨西哥超">030 墨西哥超</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />08:00</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="普埃布拉" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>普埃布拉</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="墨西哥美洲" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>墨西哥美洲</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="普埃布拉" league_no="030" league_no_week="周五030" name2="墨西哥美洲" sp1="1.60" sp2="2.07" numb="106989" handicap="+1" league_name="墨西哥超级联赛" end_time="04-20"><ins>主不败</ins><span>1.60</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="普埃布拉" league_no="030" league_no_week="周五030" name2="墨西哥美洲" sp1="1.60" sp2="2.07" numb="106989" handicap="+1" league_name="墨西哥超级联赛" end_time="04-20"><ins>客胜</ins><span>2.07</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106990" data-order-index="53" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 阿根廷甲">031 阿根廷甲</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />08:15</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="拉普拉塔大学生" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>拉普拉塔大</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="贝尔格拉诺" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>贝尔格拉诺</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="拉普拉塔大" league_no="031" league_no_week="周五031" name2="贝尔格拉诺" sp1="2.14" sp2="1.56" numb="106990" handicap="-1" league_name="阿根廷甲级联赛" end_time="04-20"><ins>主胜</ins><span>2.14</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="拉普拉塔大" league_no="031" league_no_week="周五031" name2="贝尔格拉诺" sp1="2.14" sp2="1.56" numb="106990" handicap="-1" league_name="阿根廷甲级联赛" end_time="04-20"><ins>客不败</ins><span>1.56</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106991" data-order-index="54" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 美国职业">032 美国职业</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />09:00</span><span class="show-end-time">04-20<br />23:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="堪萨斯城竞技" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>堪萨斯城竞</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="温哥华白帽" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>温哥华白帽</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="堪萨斯城竞" league_no="032" league_no_week="周五032" name2="温哥华白帽" sp1="1.36" sp2="2.67" numb="106991" handicap="-1" league_name="美国职业大联盟" end_time="04-20"><ins>主胜</ins><span>1.36</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="堪萨斯城竞" league_no="032" league_no_week="周五032" name2="温哥华白帽" sp1="1.36" sp2="2.67" numb="106991" handicap="-1" league_name="美国职业大联盟" end_time="04-20"><ins>客不败</ins><span>2.67</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                        <tr class="baskballteam game-item " data-game-id="106992" data-order-index="55" data-schedule-id="0">
+                               <td class="league"><a href="javascript:void(0);" class="league-name 墨西哥超">033 墨西哥超</a></td>
+                               <td class="game-time"><span class="show-game-time">04-21<br />10:00</span><span class="show-end-time">04-21<br />09:30</span></td>
+                               <td class="home-team"><a href="javascript:void(0);" target="_blank" title="阿特拉斯" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span class="gray"></span> <span>阿特拉斯</span></a></td>
+                               <td class="visiting-team"><a href="javascript:void(0);" target="_blank" title="瓜达拉哈拉" otitle="彩票投资-竞彩足球-竞彩足球比赛选择区-过关投注-二选一-球队详情" otype="button"><span>瓜达拉哈拉</span> <span class="gray"></span></a></td>
+                               
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_home" data-odd-index="0" name1="阿特拉斯" league_no="033" league_no_week="周五033" name2="瓜达拉哈拉" sp1="2.18" sp2="1.54" numb="106992" handicap="-1" league_name="墨西哥超级联赛" end_time="04-21"><ins>主胜</ins><span>2.18</span></a>
+                               </td>
+                               <td class="average-pv odds">
+                                   <a href="javascript:;" data-odd-type="sf_visiting" data-odd-index="1" name1="阿特拉斯" league_no="033" league_no_week="周五033" name2="瓜达拉哈拉" sp1="2.18" sp2="1.54" numb="106992" handicap="-1" league_name="墨西哥超级联赛" end_time="04-21"><ins>客不败</ins><span>1.54</span></a>
+                               </td>
+                               <td class="analysis">亚<i> / <i>欧</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                               <td class="odds odds99">-</td>
+                            </tr>
+                                                    </tbody>
+                                                                                                                    </table>
+                </div>
+                            </div>
+        </div>
+        
+        
+        <div class="f-r  right-wrapper">
+    <div class="slide-wrapper">
+    
+       <div class="silde-box order-list">
+           <input type="hidden" name="pay_no_money_flag" id="pay_no_money_flag" value="1"/>
+          <h1><span class="f-l"><em>1</em> 确认领取信息</span><a href="javascript:;" class="f-r empty_btn" otitle="彩票投资-竞彩足球-竞彩足球购买区-确认投注信息-清空" otype="button">清空</a></h1>
+          <table class="table-order-list" cellspacing="0" width="100%" cellpadding="0">
+              <thead>  
+                     <tr>
+                        <th class="game-no"  >场次</th>
+                        <th class="home-team"  >主队</th>
+                         <th class="touzhu-info">领取</th>                          <th class="dan-info">胆</th>                      </tr>
+               </thead>
+          </table>
+          <div class="order-items-panel">
+          <table width="100%" cellspacing="0" cellpadding="0" class="table-order-list">
+               <tbody id="order-items">
+               
+                  <tr class="none-odd-item">
+                      <td colspan="3">您还没有投注任何赛事</td>
+                   </tr> 
+               
+               </tbody>
+          </table>
+          </div>
+       </div>
+       
+       
+       
+       <div class="silde-box pass-type">
+          <h1><em>2</em>选择过关方式</h1>
+          <ul class="common-menu pass-type-menu">
+                 <li class="selected"><a  otitle="彩票投资-竞彩足球-竞彩足球购买区-选择过关方式-自由过关" otype="button"   href="javascript:;" data-list-type="freedom-list">自由过关</a></li>
+                                  <li><a otitle="彩票投资-竞彩足球-竞彩足球购买区-选择过关方式-多串过关" otype="button"   href="javascript:;"  data-list-type="multiple-list">多串过关</a></li>
+                           </ul>
+          <div class="passtype-list-panel">
+              <div class="paastype-content">
+                   <ul class="pass-type-list clearfix" data-list-type="freedom-list" id="freedom-list">
+                       <span style="padding-left:65px">请至少选择两场比赛</span>
+                   </ul>
+                                      <ul class="pass-type-list clearfix" style="display:none;"  data-list-type="multiple-list" id="multiple-list">
+                       <span style="padding-left:65px">请至少选择3场比赛</span>
+                   </ul>
+                                  </div>
+           </div>
+       </div>
+       
+       
+       <div class="silde-box confirm-touzhu">
+          <h1><em>3</em>领取</h1>
+          <div class="box">
+              <dl>
+                  <dd>
+                    <div class="count-area">倍数：<span class="count-ipt-box"><input class="multiple-input input"  type="text"  value="10"  maxlength="7" onkeyup="CP.Util.keyUpInt(this);settime();" onblur="CP.Util.updateInputInt(this,1000000,1);settime();" /><a href="javascript:void(0);" class="down" onclick="CP.Util.updateChangeNum(this,-1,1000000,1);settime();">-</a><a href="javascript:void(0);" class="up" onclick="CP.Util.updateChangeNum(this,1,1000000,1);settime();">+</a></span>
+
+                    </div>
+                   </dd>
+                   <dd>
+                       金额：<em class=" font14px "><strong>0 元</strong></em>
+                   </dd>
+                   <dd>
+                       奖金范围：<em class=" font14px "><strong>0.00 元</strong></em>
+                   </dd>
+                   <dd >
+                       <a href="javascript:;" id="bonusTouzhuBtn" otitle="彩票投资-竞彩足球-竞彩足球购买区-付款购买-奖金明细" otype="button">奖金明细</a>
+
+                                          </dd>
+                   <dd>
+                       <a otitle="彩票投资-竞彩足球-竞彩足球购买区-付款购买-立即投注" otype="button" class="submit-touzhu-button1 " href="javascript:void(0);" id="submitTouzhuBtn">立即领取</a>
+                   </dd>
+                   <dd class="gray">提示：实际奖金以最终出票时为准</dd>
+               </dl>
+           </div>
+       </div>
+    </div>
+</div>    
+        </div>
+        
+    
+    </div>
+    
+    <div class="res-intro-section">
+         <h3>投注提示</h3>
+         <ol>
+              <li>竞彩足球销售时间<br />单式：周一至周五 09:00~23:50，周六/周日 09:00~00:50；<br />复式：(含单场决胜、奖金优化)：周一至周五 09:00~23:40，周六/周日 09:00~00:40；</li>
+              <li>页面中显示的奖金仅供参考，以出票时的赔率计算奖金；</li>
+              <li>让球的含义：负号(-)为主让客，正号(+)为客让主；</li>
+              <li>竞彩足球彩果，以比赛90分钟内比分(含伤停补时)结果为准。若出现出票成功后，比赛延期、中断或取消的情况，请参考<a href="/index.php?act=novicehelp&st=newscontent&id=1832" target="_blank" class="bule" style="text-decoration:underline;">竞技彩中比赛延期、中断或取消后开奖怎么处理；</a></li>
+              <li>混合过关包含单一玩法串；</li>
+              <li>投注成功与否以出票状态为准，“已出票”表示投注成功，“等待出票表示正在出票中”，“已撤单”表示投注失败；</li>
+         </ol>
+    </div>
+     
+     
+     
+    <div id="my_order_list" class="conmmon-type-tab-box"  style="display: none;" >
+        
+    </div> 
+    
+     
+</div>
+<input id="auto_commit_btn" type="hidden" value="">
+<form id="bonus_form" target="_blank" action="/index.php?act=jczqbonus" method="post">
+    <input type="hidden" id="bonus_bets_str" name="bonus_bets_str" value=""/>
+    <input type="hidden" id="bonus_bets_type" name="bonus_bets_type" value=""/>
+    <input type="hidden" id="bonus_bets_methods" name="bonus_bets_methods" value=""/>
+    <input type="hidden" id="bonus_bets_times" name="bonus_bets_times" value=""/>
+</form>
+
+
+
+
+<script type="text/javascript">
+    var param = {"name":"%E7%AB%9E%E5%BD%A9%E8%B6%B3%E7%90%83","st":"jczq","playnum":[8],"lotteryid":25,"limitnum":10000,"single":0,"price":2,"msgtip":"%E8%AF%B7%E8%87%B3%E5%B0%91%E9%80%89%E6%8B%A92%E5%9C%BA%E7%90%83%E8%B5%9B","showoption":["\u4e3b\u80dc","\u5ba2\u80dc","\u4e3b\u4e0d\u8d25","\u5ba2\u4e0d\u8d25"],"betoption":["\u4e3b\u80dc","\u4e3b\u8d1f","\u8ba9\u7403\u4e3b\u80dc","\u8ba9\u7403\u4e3b\u8d1f"],"beturl":"\/index.php?act=jczqorder&st=paying"};
+    var default_multiple=5;
+    var spindexData = [];
+    $(".pv-list").find("input").click(function(){
+        var radiochk = $("input:radio:checked").val();
+        var spindexname = $("input:radio:checked").attr("data-index-name");
+        $(".pv-filter-wrapper").find("span").html(spindexname);
+        var spindextitle = $(".martrix-header").find("th.spindex-title");
+        if(radiochk == 51 || radiochk == 52 || radiochk == 53 || radiochk == 54 || radiochk == 55 || radiochk == 56){
+            spindextitle.eq(0).html("");
+            spindextitle.eq(1).html('值');
+            spindextitle.eq(2).html("");
+        }else if(radiochk == 21 || radiochk == 22 || radiochk == 23 || radiochk == 24){
+            spindextitle.eq(0).html('主水');
+            spindextitle.eq(1).html('盘口');
+            spindextitle.eq(2).html('客水');
+        }else{
+            spindextitle.eq(0).html('主胜');
+            spindextitle.eq(1).html('平');
+            spindextitle.eq(2).html('主负');
+        }
+        $(".baskballteam").each(function(){
+            var _this = $(this);
+            var odds99 = _this.find(".odds99");
+            var scheduleid = _this.attr("data-schedule-id");
+            if(spindexData[scheduleid] == undefined){
+                return true;
+            }
+            var spindexarr = spindexData[scheduleid][radiochk];
+            if(spindexarr == undefined){
+                if(radiochk == 51 || radiochk == 52 || radiochk == 53 || radiochk == 54 || radiochk == 55 || radiochk == 56){
+                    odds99.eq(0).html("");
+                    odds99.eq(1).html("-");
+                    odds99.eq(2).html("");
+                } else {
+                    odds99.eq(0).html("-");
+                    odds99.eq(1).html("-");
+                    odds99.eq(2).html("-");
+                }
+            }else{
+                if(radiochk == 51 || radiochk == 52 || radiochk == 53 || radiochk == 54 || radiochk == 55 || radiochk == 56){
+                    odds99.eq(0).html("");
+                    odds99.eq(1).html(spindexarr[3]);
+                    odds99.eq(2).html("");
+                }else{
+                    spindexarr[0] = spindexarr[0].length > 0 ? spindexarr[0]:"-";
+                    spindexarr[1] = spindexarr[1].length > 0 ? spindexarr[1]:"-";
+                    spindexarr[2] = spindexarr[2].length > 0 ? spindexarr[2]:"-";
+                    odds99.eq(0).html(spindexarr[0]);
+                    odds99.eq(1).html(spindexarr[1]);
+                    odds99.eq(2).html(spindexarr[2]);
+                }
+            }
+        });
+    });
+</script>
+
+<script type="text/javascript" src="http://h1.jkimg.net/caipiao/js/lotteryjs/json2.js?v=201803161619"></script>
+<script type="text/javascript" src="http://h2.jkimg.net/caipiao/js/lotteryjs/lottery.base.js?v=201803161619"></script>
+<script type="text/javascript" src="http://h3.jkimg.net/caipiao/js/lotteryjs/lottery.football.exy.js?v=201803161619"></script>
+<script type="text/javascript" src="http://h4.jkimg.net/caipiao/js/lotteryjs/lottery.ctrlfootball.exy.js?v=201803161619"></script>
+
+
+<div class="footer clrfix">
+  <div class="foot-con">
+    <dl class="clrfix">
+      <dd>
+        <h3 class="goucai"><span></span>领取流程</h3>
+        <ul>
+          <li><a otitle="PD-网站底部介绍-购彩流程-注册流程" otype="button" href="/index.php?act=novicehelp&amp;st=newscontent&amp;id=1406" target="_blank">注册流程</a></li>
+          <li><a otitle="PD-网站底部介绍-购彩流程-投注和领取" otype="button" href="/index.php?act=novicehelp&amp;st=newscontent&amp;id=1408" target="_blank">投注和领取</a></li>
+          <li><a otitle="PD-网站底部介绍-购彩流程-查看订单" otype="button" href="/index.php?act=novicehelp&amp;st=newscontent&amp;id=1410" target="_blank">查看订单</a></li>
+          <li><a otitle="PD-网站底部介绍-购彩流程-如何兑奖" otype="button" href="/index.php?act=novicehelp&amp;st=newscontent&amp;id=1412" target="_blank">如何兑奖</a></li>
+        </ul>
+      </dd>
+      <dd>
+        <h3 class="zhifu"><span></span>领取彩票方式</h3>
+        <ul>
+          <li><a otitle="PD-网站底部介绍-支付方式-万里通积分领取" otype="button" href="/index.php?act=novicehelp&amp;st=newscontent&amp;id=2218#%E9%94%9A%E7%82%B92" target="_blank">万里通积分领取</a></li>
+          <li><a otitle="PD-网站底部介绍-支付方式-欢乐值(T点)领取" otype="button" href="/index.php?act=novicehelp&amp;st=newscontent&amp;id=2222" target="_blank">欢乐值(T点)领取</a></li>
+          <li><a otitle="PD-网站底部介绍-支付方式-红包领取" otype="button" href="/index.php?act=novicehelp&amp;st=newscontent&amp;id=2218#%E9%94%9A%E7%82%B92" target="_blank">红包领取</a></li>
+          <li><a otitle="PD-网站底部介绍-支付方式-优惠券领取" otype="button" href="/index.php?act=novicehelp&amp;st=newscontent&amp;id=2218#%E9%94%9A%E7%82%B92" target="_blank">优惠券领取</a></li>
+        </ul>
+      </dd>
+      <dd>
+        <h3 class="bangzhu"><span></span>帮助中心</h3>
+        <ul>
+
+          <li><a otitle="PD-网站底部介绍-帮助中心-消费抵用券说明" otype="button" href="/index.php?act=novicehelp&amp;st=newscontent&amp;id=379" target="_blank">消费抵用券说明</a></li>
+          <li><a otitle="PD-网站底部介绍-帮助中心-常见问题" otype="button" href="/index.php?act=novicehelp&amp;st=main" target="_blank">常见问题</a></li>
+          <li><a style="font-weight:bold;color:#ff6600" href="javascript:void(0);" class="caipiaoqa" otitle="PD-网站底部介绍-帮助中心-在线客服" otype="button">在线客服&nbsp;<img style="margin-top:-5px;display: inline;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAPCAYAAAACsSQRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJdSURBVDhPfVM9aBRREL6LkhNPBItY2Ke0EyEIEUSwkbSW4pnLnmfM+ZNOTCw0aHGKGFCwiIIhCop4IGgTCwULFQJRwcZCECEmBDa32Z+3731+M+/utMqyw+6bnfnmm29mC+heecfkWn4DLFxC+3EDmD8H85RPnu2394hhemExLYVFD0Qx8hzu2STs3cNw3xeBaA2bmQHCVQVAcxjZ6ykGZkjTlBmrBME/EGMJsHgV9t4JGOMQfmkBt4eA6b2arOwk6dYwzNsmgSyck8L/gWD9D4NHkCR8J3Wc6kN2pgBX6ed7AVF9APblBWWcNI8BG21W5s2CPRA7cxDmwQjw6ys2a3TT0tF+uHoRSX0bUKFvlLbyE5g9DswMISOKGL1tuB+ftaqZvwj76romdJOFSZdRPMbwFzeBJxXYsbLmSVv0kr+gkzJmj+o0wGBb5VkqV4u0EvKAbOo7KfwVJDcO+O/RbxkPCs6xS6qNpQXg3X3kn54jHi95FmQjrISJAGshifs4h3SppcKKLgRRMJ1572K/kpwGRdjabs8o2I7wzhF+NEgMJWCe5rgNFGREehDZbaJqIwuB1mVgYpcCobFP20C+7qciOmpxi9ypJoYOIshsRfVGWSlnDBJc5Utwff/wCDg74KdIRyjf+CQIk6MV3ZE02OOpyzgnB5HPcQrcDfvwNM87KCx35mSf14cL6DvICEKK7WX+ExRTkxmYj3s9UPULJ+OUCYlPp8RCplbWIXT+HQNzbX9nlFuYLKAwoMBxQLHFNz1IJgLCnyydOuS12MrOs1UxaYn7gomSLx6t4S8RlyZUBUUJawAAAABJRU5ErkJggg== "></a></li>
+          <li style="color:#999;">客服电话:4001081768</li>
+          <li style="color:#999;width:150px;height:20px"><span style="display: inline-block;width:200px;">客服质量监督：<br/>dept_pacyzljdb@pingan.com.cn</span></li>
+        </ul>
+      </dd>
+      <dd>
+        <h3 class="wanfa"><span></span>玩法说明</h3>
+        <ul>
+          <li><a otitle="PD-网站底部介绍-玩法说明-福利彩票" otype="button" href="/index.php?act=playintro&amp;st=main&amp;cur=funintrol" target="_blank">福利彩票</a></li>
+          <li><a otitle="PD-网站底部介绍-玩法说明-体育彩票" otype="button" href="/index.php?act=playintro&amp;st=main&amp;id=51" target="_blank">体育彩票</a></li>
+          <li><a otitle="PD-网站底部介绍-玩法说明-竞彩" otype="button" href="/index.php?act=playintro&amp;st=main&amp;id=20" target="_blank">竞彩</a></li>
+          <li><a otitle="PD-网站底部介绍-玩法说明-高频彩" otype="button" href="/index.php?act=playintro&amp;st=main&amp;id=100" target="_blank">高频彩</a></li>
+        </ul>
+      </dd>
+      <dd>
+        <h3 class="hezuo"><span></span>商务合作</h3>
+        <ul>
+          <li><a otitle="PD-网站底部介绍-商务合作-彩票联运" otype="button" href="/index.php?act=lotterycenter&amp;st=newscontent&amp;id=2216" target="_blank">彩票联运</a></li>
+          <li><a otitle="PD-网站底部介绍-商务合作-推广合作" otype="button" href="/index.php?act=lotterycenter&amp;st=newscontent&amp;id=2216" target="_blank">推广合作</a></li>
+          <li><a otitle="PD-网站底部介绍-商务合作-采购联系" otype="button" href="/index.php?act=lotterycenter&amp;st=newscontent&amp;id=2216" target="_blank">采购联系</a></li>
+          <li><a otitle="PD-网站底部介绍-商务合作-合作伙伴" otype="button" href="/index.php?act=lotterycenter&amp;st=newscontent&amp;id=2216" target="_blank">合作伙伴</a></li>
+        </ul>
+      </dd>
+      <dd class="last">
+                <h3 class="yidong"><span></span>移动客户端</h3>
+                <ul>
+                    <li><a otitle="彩票首页-底部导航-移动客户端-移动版" otype="button" href="http://cp.1768.com/" target="_blank">彩票手机版</a></li>
+                    <!--<li><a otitle="彩票首页-底部导航-移动客户端-电脑版" otype="button" href="http://caipiao.1768.com/" target="_blank">电脑版</a></li>-->
+                    <li><a id="cpdownloadlink" otitle="彩票首页-底部导航-移动客户端-客户端下载" otype="button" href="http://caipiao.1768.com/?act=mobile" target="_blank">彩票客户端下载</a></li>
+                    <li><a otitle="彩票首页-底部导航-游戏客户端-ios" otype="button" href="https://itunes.apple.com/cn/app/ping-an-yu-le-cheng/id933837977?mt=8" target="_blank">游戏IOS版</a></li>
+                    <li><a otitle="彩票首页-底部导航-游戏客户端-android" otype="button" href="http://m.1768.com/?act=more&st=download" target="_blank">游戏Android版</a></li>
+                </ul>
+     </dd>
+    </dl>
+  </div>
+  <div class="foot-bg">
+    <div class="w1100 clrfix">
+      <div class="foot-copyright">
+        <div class="copyright"> 
+          <p>版权所有 &copy; 上海友玩网络科技有限公司 未经许可不得复制、转载或摘编，违者必究!</p>
+          <p>Copyright &copy; Shanghai YOUWAN Science &amp; Technology Co., Ltd. All Rights Reserved</p>
+          <p>
+            <a target="_blank" href="http://www.sznet110.gov.cn/index.jsp" class="beian">备案</a>
+            <a target="_blank" href="http://www.sznet110.gov.cn/webrecord/innernet/Welcome.jsp?bano=440310120110"  class="anwang">安网</a>
+            <a target="_blank" href="http://www.miitbeian.gov.cn">ICP许可证号 沪ICP备12033953号-5 沪网文[2016]0203-103号</a>&nbsp;&nbsp;&nbsp;&nbsp;文网游备字[2017]M-APP 1001号
+          </p>
+        </div>
+        <ul class="clrfix">
+          <li><i class="guanfang"></i>官方信誉</li>
+          <li><i class="kuaisu"></i>快速领彩</li>
+          <li><i class="jiaoyi"></i>交易安全</li>
+          <li><i class="lingjiang"></i>领奖无忧</li>
+          <li class="weibo"><a href="http://e.weibo.com/2653994354/profile" title="新浪微博" otitle="彩票首页-底部导航-新浪微博" otype="button" target="_blank"><i></i>平安彩票微博</a></li>
+          <li class="weixin"><a href="javascript:;" title="微信"><i></i>微信公众号</a><span id="wx-ewm" style="display: none;"></span></li>
+        </ul>
+      </div>
+      <div class="foot-qrcode">
+        <div class="pic"></div>
+        <p>扫描即可下载<strong>平安彩票</strong>客户端</p>
+        <p>移动购彩: <strong><a href="http://cp.1768.com" target="_blank">cp.1768.com</a></strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+    //cookie增删改
+    function getCookie(name){
+        var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));
+        if(arr != null){return unescape(arr[2]);}
+        return null;
+    }
+    function setCookie(name, value, hours){
+        var expire = "";
+        if(hours != null){
+            expire = new Date((new Date()).getTime() + hours * 3600000);
+            expire = "; expires=" + expire.toGMTString();
+        }
+        document.cookie = name + "=" + escape(value) + expire;
+    }
+    function clearCookie(name){document.cookie = name+"=;expires="+(new Date(0)).toGMTString();}
+   //判断测试环境是否弹窗提示
+    var environment='';       
+    function stg_tip(){    	
+    	if(environment=='stg' && getCookie('environment')==null){    		
+    		setCookie('environment','stg',0.2);
+    		if(confirm('亲爱的彩票用户，这是测试环境，仅供测试人员使用。正常领取请点击确认按钮去正式环境！'))
+	    	{
+	    		window.location='http://caipiao.1768.com';
+	    	}	
+    	}
+    	
+    }
+    stg_tip();
+    //判断测试环境是否弹窗提示end
+    /*--24money统计 js--*/
+    var _paq = {site:"caipiao", domain:"caipiao.1768.com"};
+
+    _paq.userId = "";//"平安玩的passportid"; //未登陆的时候为空串
+    _paq.userType = "3";
+    /*
+    if(location.protocol.toLowerCase() == "http:"){
+        document.write(decodeURIComponent("%3Cscript src='//h1.jkimg.net/webstat/pa_beacon_cdn.js' type='text/javascript' %3E%3C/script%3E"));
+    }else{
+        document.write(decodeURIComponent("%3Cscript src='//webstat.wanlitong.com/js/pa_beacon_https.js' type='text/javascript' %3E%3C/script%3E"));
+    }
+    */
+    /*--end 统计 js--*/
+	$(function($) {
+        $("a").click(function (){
+            var host_url = document.domain;
+            var game_url = "http://www.1768.com";
+            var gamebbs_url = "http://gamebbs.wanlitong.com";
+            var href = $(this).attr('href');
+
+            if(host_url.indexOf('wanlitong') > -1 && game_url.indexOf('1768') > -1){
+                var url_k = '';
+                game_url = game_url.substr( game_url.indexOf("//")+2);
+                gamebbs_url = gamebbs_url.substr( gamebbs_url.indexOf("//")+2);
+                if(href.indexOf(game_url) > -1){
+                    url_k = game_url.substr(0, game_url.indexOf("."));
+                    if( url_k == 'www'){
+                    	url_k = 'game';
+                    }
+                    href = href.replace(new RegExp(game_url,"gm"),url_k+'.wanlitong.com');
+                }else if(href.indexOf(gamebbs_url) > -1){
+                    url_k = gamebbs_url.substr(0, gamebbs_url.indexOf("."));
+                    href = href.replace(new RegExp(gamebbs_url,"gm"),url_k+'.wanlitong.com');
+                }
+            }
+            if(href.indexOf("//caipiao") > -1 && href.indexOf("?") > -1){
+            	href = href.substr( href.indexOf("//")+2);
+            	href = href.substr( href.indexOf("/"));
+            }
+            $(this).attr("href", href);
+            return true;
+        });
+    });
+</script>
+<div class="hmbaidu" style="display:none">
+  <script type="text/javascript">
+      /*--baidu统计流量JS --*/
+      var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+      document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe8100675ac9ecf4a1463634286c95570' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+</div>
+</body>
+</html>

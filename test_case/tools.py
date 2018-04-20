@@ -5,7 +5,8 @@ from requests import get
 from bs4 import *
 import hashlib,urlparse
 import os,requests
-from lxml import etree
+from urllib import urlencode,quote,unquote
+import lxml
 import html5lib
 
 def bet_str(lotteryid=None, rednum=None, bluenum=None, wanfa=None):  # lotteryid(int):彩种ID，wanfa(str):01单式，02复式，03胆拖 rednum：红球个数，bluenum:蓝球个数
@@ -65,8 +66,8 @@ def strf_time(type):
 def logger(title,msg):#titile标题，msg内容
 	load_data_file()
 	log_path = "{}.log".format(strf_time('date'))
-	with open(log_path,"w+") as f:
-		f.write("{}:---[{}]---:{}".format(strf_time('time'),title,msg))
+	with open(log_path,"a+") as f:
+		f.write("\n{}:---[{}]---:{}".format(strf_time('time'),title,msg))
 
 def randombet(nums, count_num, type=0, start=1):  # nums:生成球号码,count_num:球总数,type:0=>不重复，1=>可重复，start从0或者1开始生成，1代表从1开始生成
 	li = []
@@ -143,6 +144,7 @@ def get_match(type):#传递竞足或竞篮页面，通过bs4去爬取match_id
 	return  li
 
 def get_num_issue(lotteryid):#获取数字彩期号,从页面抓取在售期号
+	from data import bet_url_xpath
 	url,path = bet_url_xpath(lotteryid)
 	html = requests.get(url=url ).content
 	issue = xpath(html,path)
@@ -156,47 +158,22 @@ def xpath(html,path):
 	data = [x.text for x in links ][0]
 	return data
 
-def bet_url_xpath(lotteryid = 200):
-	data = {
-		200: {
-			'url':"http://caipiao.1768.com/index.php?act=order_ssq&pid=200",
-			'issue_xpath':'//*[@id="ssqHead"]/div[1]/div/div/p[1]/em[1]'},
-		202:{
-			'url':"http://caipiao.1768.com/index.php?act=order_qlc&pid=202",
-			'issue_xpath':'//*[@id="qlcHead"]/div[1]/div/div/p[1]/em',
-			 },
-		201:{
-			'url':"http://caipiao.1768.com/index.php?act=order_3d&pid=201",
-			'issue_xpath':'/html/body/div[4]/div[1]/div[2]/div/div/p/font',
-			},
-		51: {
-			'url':"http://caipiao.1768.com/index.php?act=order_dlt&pid=51",
-			'issue_xpath':'//*[@id="ssqHead"]/div[1]/div/div/p[1]/em[1]',
-			},
-		52:{
-			'url':"http://caipiao.1768.com/index.php?act=order_qxc&pid=52",
-			'issue_xpath':'//*[@id="ssqHead"]/div[1]/div/div/p[1]/em[1]',
-			},
-		53:{
-			'url':"http://caipiao.1768.com/index.php?act=order_pl5&pid=53",
-			'issue_xpath':'/html/body/div[4]/div[1]/div[2]/div/div/p/font'
-			},
-		54:{
-			'url':"http://caipiao.1768.com/index.php?act=order_pl3&pid=54",
-			'issue_xpath':'/html/body/div[4]/div[1]/div[2]/div/div/p/font'
-		}
-	}
-	return data.get(lotteryid).get('url'),data.get(lotteryid).get('issue_xpath')
+
 def url2Dict(url):
     query = urlparse.urlparse(url).query
     return dict([(k, v[0]) for k, v in urlparse.parse_qs(query).items()])
 
-def pc_bet_data(type):
-	from data import pc_bet_form
-	datas = pc_bet_form(type)
+def pc_bet_data(num):
+	from data import pc_bet_form,num_for_lotteryid
+	datas = pc_bet_form(num)
 	lotteryid = datas.get('lotteryid')
+	mem = Memcache()
+	titles = num_for_lotteryid()
+	title = [k for k, v in  titles.items() if num in v][0]
+	issue_key = "issue_{}".format(title)
+	issue = mem.getmem(issue_key)
 	bet = {
-		'issue':get_num_issue(lotteryid),
+		'issue':issue,
 		'lottery_id':lotteryid,
 		'betstr':datas.get('betstr'),
 		'betnum': datas.get('betnum'),
@@ -204,3 +181,22 @@ def pc_bet_data(type):
 		'is_add':2
 	}
 	return bet
+
+
+def jc_bet_data(lotteryid):
+	if lotteryid in (20,21,22,23,25,26,2521):
+		match_list = Memcache().getmem('zq_matchlist')
+	else:
+		match_list = Memcache().getmem('lq_matchlist')
+	first_match = match_list[0]
+	strs ='[{"ball":"106925:周四001:[主胜_1.37]/106926:周四002:[主胜_2.14]","data":"106925:周四001:[主胜_1.37]/106926:周四002:[主胜_2.14]^2串1","tag":"jczq","times":5,"note":1,"money":10,"matchcount":2}]'
+	bet = {
+		"cart":quote(strs),
+		"tag":'jczq',
+		"lotteryid":lotteryid,
+		"bonus":'NS44Ng=='
+	}
+	return bet
+
+if __name__ == '__main__':
+	print jc_bet_data(25)

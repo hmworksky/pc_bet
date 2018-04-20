@@ -1,0 +1,48 @@
+
+2018-04-20 12:38:12:---[branch]---:<type 'list'>
+2018-04-20 12:49:50:---[test]---:0
+2018-04-20 12:49:50:---[test]---:1
+2018-04-20 12:49:50:---[test]---:2
+2018-04-20 12:49:50:---[test]---:3
+2018-04-20 12:49:50:---[test]---:4
+2018-04-20 13:45:18:---[cookie]---:[{u'domain': u'.caipiao.1768.com', u'secure': False, u'value': u'7f099bf655d9d9148aae3327ac5ec3ad47ae72df', u'expiry': None, u'path': u'/', u'httpOnly': False, u'name': u'CAIPIAOSID'}, {u'domain': u'caipiao.1768.com', u'secure': False, u'value': u'902141555', u'expiry': None, u'path': u'/', u'httpOnly': False, u'name': u'td_cookie'}, {u'domain': u'.caipiao.1768.com', u'secure': False, u'value': u'1524203083', u'expiry': None, u'path': u'/', u'httpOnly': False, u'name': u'Hm_lvt_e8100675ac9ecf4a1463634286c95570'}, {u'domain': u'.caipiao.1768.com', u'secure': False, u'value': u'1524203108', u'expiry': None, u'path': u'/', u'httpOnly': False, u'name': u'Hm_lpvt_e8100675ac9ecf4a1463634286c95570'}]
+2018-04-20 13:45:34:---[bet]---:{"status":"error","msg":"\u8be5\u5f69\u7968\u8fd8\u672a\u5f00\u59cb\u9500\u552e\u6216\u5df2\u505c\u6b62\u9500\u552e\uff01"}
+2018-04-20 13:49:35:---[bet]---:{"status":"success","url":".%2Findex.php%3Fact%3Dlottery%26st%3Dlotterypay%26pid%3D1%26prebuyid%3D9098758%26number%3D2%26multiple%3D1%26amount%3D4%26lotteryid%3D54%26lotteryname%3D%25E6%258E%2592%25E5%2588%2597%25E4%25B8%2589%26issue%3D18103%26bettype%3D1%26freezeamt%3D0%26ischaseid%3D0%26sid%3Dc8b39d216c7ebaf6573e12cecbdbfd26e5bc0d41%26userid%3D31691906%26orderid%3D18042013518120840845ad%26sign%3D29bc6ffb43fb0e32bc9992140d9e90a8%26oneprice%3D2"}
+2018-04-20 13:50:06:---[bet]---:{"status":"success","url":".%2Findex.php%3Fact%3Dlottery%26st%3Dlotterypay%26pid%3D1%26prebuyid%3D9098760%26number%3D2%26multiple%3D1%26amount%3D4%26lotteryid%3D54%26lotteryname%3D%25E6%258E%2592%25E5%2588%2597%25E4%25B8%2589%26issue%3D18103%26bettype%3D1%26freezeamt%3D0%26ischaseid%3D0%26sid%3D6b21a0b1709749d23cafa16583c929cffb5bd9f3%26userid%3D31691906%26orderid%3D180420135116068774225a%26sign%3D89fd7a80b5b90f8df9868100ab98bfe5%26oneprice%3D2"}
+2018-04-20 13:52:45:---[bet]---:{"status":"success","url":".%2Findex.php%3Fact%3Dlottery%26st%3Dlotterypay%26pid%3D1%26prebuyid%3D9098766%26number%3D2%26multiple%3D1%26amount%3D4%26lotteryid%3D54%26lotteryname%3D%25E6%258E%2592%25E5%2588%2597%25E4%25B8%2589%26issue%3D18103%26bettype%3D1%26freezeamt%3D0%26ischaseid%3D0%26sid%3Dc9ed540921ced24926a953a2a753a52df62106c5%26userid%3D31691906%26orderid%3D180420135414020396955a%26sign%3D6b5bbba8e67f24f1dfcaf5cc753d3ed3%26oneprice%3D2"}
+2018-04-20 13:53:45:---[bet]---:{"status":"success","url":".%2Findex.php%3Fact%3Dlottery%26st%3Dlotterypay%26pid%3D1%26prebuyid%3D9098768%26number%3D2%26multiple%3D1%26amount%3D4%26lotteryid%3D54%26lotteryname%3D%25E6%258E%2592%25E5%2588%2597%25E4%25B8%2589%26issue%3D18103%26bettype%3D1%26freezeamt%3D0%26ischaseid%3D0%26sid%3D9dd9cb808c1bc74113cbe48ae8a8a17e03b738df%26userid%3D31691906%26orderid%3D180420135514820978385a%26sign%3D5d5f0c852c069b3cee2e470603662bcc%26oneprice%3D2"}
+2018-04-20 13:55:57:---[bet]---:{"status":"success","url":".%2Findex.php%3Fact%3Dlottery%26st%3Dlotterypay%26pid%3D1%26prebuyid%3D9098776%26number%3D1%26multiple%3D1%26amount%3D2%26lotteryid%3D53%26lotteryname%3D%25E6%258E%2592%25E5%2588%2597%25E4%25BA%2594%26issue%3D18103%26bettype%3D1%26freezeamt%3D0%26ischaseid%3D0%26sid%3D5e4571d1d50879f9f4200db8e1dd156404b83af5%26userid%3D31691906%26orderid%3D180420135711322880615a%26sign%3De39d58ca4198703f821744fe0fd05411%26oneprice%3D2"}
+2018-04-20 14:17:15:---[bet]---:{"status":"success","url":".%2Findex.php%3Fact%3Dlottery%26st%3Dlotterypay%26pid%3D1%26prebuyid%3D9098812%26number%3D7%26multiple%3D1%26amount%3D14%26lotteryid%3D200%26lotteryname%3D%25E5%258F%258C%25E8%2589%25B2%25E7%2590%2583%26issue%3D2018045%26bettype%3D1%26freezeamt%3D0%26ischaseid%3D0%26sid%3Dcd0fc31863733b5a2b53ea3059dd591ecec6061c%26userid%3D31691906%26orderid%3D18042014191037437985ad%26sign%3D2f2d0c3a7f41245af76a4b0606ab3b04%26oneprice%3D2"}
+2018-04-20 14:24:21:---[branchtype]---:<type 'list'>
+2018-04-20 14:24:22:---[branchtype]---:<type 'list'>
+2018-04-20 14:24:23:---[branchtype]---:<type 'list'>
+2018-04-20 14:28:38:---[insert]---:invalid literal for int() with base 10: ''
+2018-04-20 14:32:12:---[insert]---:invalid literal for int() with base 10: ''
+2018-04-20 14:33:29:---[return_value]---:{"a":{"b":1}}
+2018-04-20 14:33:29:---[insert]---:invalid literal for int() with base 10: ''
+2018-04-20 14:33:54:---[return_value]---:{"a":1}
+2018-04-20 14:33:54:---[insert]---:invalid literal for int() with base 10: ''
+2018-04-20 14:37:41:---[return_value]---:s
+2018-04-20 14:38:06:---[return_value]---:{"a":{"b":1}}
+2018-04-20 14:39:30:---[return_value]---:str
+2018-04-20 14:39:30:---[insert]---:invalid literal for int() with base 10: ''
+2018-04-20 14:40:36:---[]---:<type 'unicode'>
+2018-04-20 14:40:36:---[return_value]---:a
+2018-04-20 14:40:36:---[insert]---:invalid literal for int() with base 10: ''
+2018-04-20 14:41:23:---[]---:<type 'unicode'>
+2018-04-20 14:41:23:---[return_value]---:a
+2018-04-20 14:41:23:---[insert]---:invalid literal for int() with base 10: ''
+2018-04-20 14:42:14:---[]---:0
+2018-04-20 14:42:14:---[return_value]---:a
+2018-04-20 14:42:14:---[insert]---:invalid literal for int() with base 10: ''
+2018-04-20 14:42:51:---[]---:0
+2018-04-20 14:42:51:---[return_value]---:a
+2018-04-20 14:42:51:---[insert]---:invalid literal for int() with base 10: ''
+2018-04-20 14:45:05:---[]---:0
+2018-04-20 14:45:05:---[0]---:<type 'int'>
+2018-04-20 14:45:05:---[return_value]---:a
+2018-04-20 20:47:47:---[bet]---:{"result":"no login","msg":"\u60a8\u8fd8\u672a\u767b\u5f55\u6216\u767b\u5f55\u8d85\u65f6\uff01","url":"\/?act=ucenter&st=login"}
+2018-04-20 20:52:25:---[cookie]---:[{u'domain': u'.caipiao.1768.com', u'secure': False, u'value': u'6f0950fafac68d0ce55d3cdd42a38a4c448e18c0', u'expiry': None, u'path': u'/', u'httpOnly': False, u'name': u'CAIPIAOSID'}, {u'domain': u'caipiao.1768.com', u'secure': False, u'value': u'904704142', u'expiry': None, u'path': u'/', u'httpOnly': False, u'name': u'td_cookie'}, {u'domain': u'.caipiao.1768.com', u'secure': False, u'value': u'1524228709', u'expiry': None, u'path': u'/', u'httpOnly': False, u'name': u'Hm_lvt_e8100675ac9ecf4a1463634286c95570'}, {u'domain': u'.caipiao.1768.com', u'secure': False, u'value': u'1524228735', u'expiry': None, u'path': u'/', u'httpOnly': False, u'name': u'Hm_lpvt_e8100675ac9ecf4a1463634286c95570'}]
+2018-04-20 20:52:40:---[bet]---:{"result":"ill request","msg":"\u7cfb\u7edf\u5f02\u5e38\uff0c\u8bf7\u7a0d\u540e\u518d\u8bd5\uff01"}
+2018-04-20 21:10:36:---[bet]---:{"status":"success","url":".%2Findex.php%3Fact%3Dlottery%26st%3Dlotterypay%26pid%3D1%26prebuyid%3D9099714%26number%3D7%26multiple%3D1%26amount%3D14%26lotteryid%3D200%26lotteryname%3D%25E5%258F%258C%25E8%2589%25B2%25E7%2590%2583%26issue%3D2018045%26bettype%3D1%26freezeamt%3D0%26ischaseid%3D0%26sid%3D6524070e94696211d3667c5ace0a98f7e184aa80%26userid%3D31691906%26orderid%3D18042021127362649775ad%26sign%3D7bf7021c36807e14a19d82841d6de711%26oneprice%3D2"}
+2018-04-20 21:21:52:---[bet]---:{"result":"ill request","msg":"\u7cfb\u7edf\u5f02\u5e38\uff0c\u8bf7\u7a0d\u540e\u518d\u8bd5\uff01"}
