@@ -54,7 +54,7 @@ def bet_str(lotteryid=None, rednum=None, bluenum=None, wanfa=None):  # lotteryid
 	elif lotteryid == 53:  # 排列五
 		pass
 def load_data_file():
-	data_path = "D:\\SOFTWARE\\study\\auto\\selenium\\data\\log"
+	data_path = readconfig('data_dir')
 	os.chdir(data_path)
 
 def strf_time(type):
@@ -65,7 +65,7 @@ def strf_time(type):
 		return time.strftime("%Y-%m-%d", time.localtime())
 def logger(title,msg):#titile标题，msg内容
 	load_data_file()
-	log_path = "{}.log".format(strf_time('date'))
+	log_path = "log\{}.log".format(strf_time('date'))
 	with open(log_path,"a+") as f:
 		f.write("\n{}:---[{}]---:{}".format(strf_time('time'),title,msg))
 
@@ -86,7 +86,7 @@ def randombet(nums, count_num, type=0, start=1):  # nums:生成球号码,count_n
 
 def readconfig(key):
     cf = ConfigParser()
-    cf.read("D:/SOFTWARE/study/auto/selenium/data/config.conf")
+    cf.read("E:/selenium/data/config.conf")
     sections = cf.sections()
     for i in sections:
         kvs = dict(cf.items(i))
@@ -101,7 +101,7 @@ def load_cookie_dir():
 	:return:
 	'''
 	import os
-	os.chdir("D:\\SOFTWARE\\study\\auto\\selenium\\data")
+	os.chdir(readconfig('data_dir'))
 
 def file_to_cookie():
 	'''
@@ -132,16 +132,7 @@ def md5(data):
 def sha1(data):
 	return hashlib.sha1(data).hexdigest()
 
-def get_match(type):#传递竞足或竞篮页面，通过bs4去爬取match_id
-	if type == 'zq':
-		url = readconfig('jczq_match_url')
-	elif type == 'lq':
-		url = readconfig('jclq_match_url')
-	html = get(url).content
-	soup = BeautifulSoup(html, 'html5lib')
-	tr = soup.find_all("tr", class_="game-item-detail")
-	li = [x.get('data-game-id') for x in soup.find_all("tr", class_="game-item-detail")]
-	return  li
+
 
 def get_num_issue(lotteryid):#获取数字彩期号,从页面抓取在售期号
 	from data import bet_url_xpath
@@ -168,9 +159,7 @@ def pc_bet_data(num):
 	datas = pc_bet_form(num)
 	lotteryid = datas.get('lotteryid')
 	mem = Memcache()
-	titles = num_for_lotteryid()
-	title = [k for k, v in  titles.items() if num in v][0]
-	issue_key = "issue_{}".format(title)
+	issue_key = "issue_{}".format(lotteryid)
 	issue = mem.getmem(issue_key)
 	bet = {
 		'issue':issue,
@@ -183,20 +172,7 @@ def pc_bet_data(num):
 	return bet
 
 
-def jc_bet_data(lotteryid):
-	if lotteryid in (20,21,22,23,25,26,2521):
-		match_list = Memcache().getmem('zq_matchlist')
-	else:
-		match_list = Memcache().getmem('lq_matchlist')
-	first_match = match_list[0]
-	strs ='[{"ball":"106925:周四001:[主胜_1.37]/106926:周四002:[主胜_2.14]","data":"106925:周四001:[主胜_1.37]/106926:周四002:[主胜_2.14]^2串1","tag":"jczq","times":5,"note":1,"money":10,"matchcount":2}]'
-	bet = {
-		"cart":quote(strs),
-		"tag":'jczq',
-		"lotteryid":lotteryid,
-		"bonus":'NS44Ng=='
-	}
-	return bet
+
 
 if __name__ == '__main__':
-	print jc_bet_data(25)
+	pc_bet_data(10001)

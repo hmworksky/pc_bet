@@ -1,6 +1,9 @@
 # coding:utf-8
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 import requests,re
-from tools import readconfig,file_to_cookie,url2Dict,pc_bet_data,logger,jc_bet_data,Memcache
+from tools import readconfig,file_to_cookie,url2Dict,pc_bet_data,logger,Memcache
 from bs4 import *
 import tools
 
@@ -8,37 +11,41 @@ import tools
 
 
 class Pcbet(object):
-	def __init__(self,num):
+	def __init__(self):
 		self.base_url = readconfig('base_url')
 		self.session = requests.Session()
 		self.cookie = file_to_cookie()
 		self.mem = Memcache()
-		self.num = num
 
-	def pc_touzhu(self):
+
+	def pc_touzhu(self,lotteryid):
 		import urllib
 		#获取投注form表单，pc_bet_data传递的参数详情见data文件中的bet_info
-		if self.num>10000:
-			forms_data = pc_bet_data(self.num)
+		if lotteryid>10000:
+			forms_data = pc_bet_data(lotteryid)
 			bet_url = readconfig('num_bet_url')
 		else:
-			num = self.num
-			forms_data = eval(self.mem.getmem("bet_{num}".format(**locals())))
-			if self.num in (30,31,32,33,35):
+			forms_data = eval(self.mem.getmem("bet_{lotteryid}".format(**locals())).replace(' ',''))
+			if lotteryid ==2521:
+				forms_data['lotterytype']='exy'
+			if lotteryid in num_for_lotteryid('jclq'):
 				bet_url = readconfig('jclq_bet_url')
-			else:
+			elif lotteryid in num_for_lotteryid('jczq'):
 				bet_url = readconfig('jczq_bet_url')
 		#发送投注请求
-		print forms_data
-		print self.cookie
-		s = self.session.post(url=bet_url, cookies=self.cookie, data=forms_data)
-		logger('bet',s.content)
-		# 获取返回值中的url参数
-		url = eval(s.content)['url']
+		s = self.session.post(url=bet_url, cookies=self.cookie, data=forms_data).content
+		if eval(s).get('url'):
+			# 获取返回值中的url参数
+			url = eval(s).get('url')
+		else:
+			logger('投注失败',"投注结果:{}".format(s))
+			return
 		# 拼接url
 		url = self.base_url+urllib.unquote(url)[1:]
 		# 获取url中的参数信息，以字典形式返回
 		data_info = url2Dict(url)
+		#记录投注结果
+		logger(lotteryid,"{}投注成功,orderid:{}".format(data_info.get('lotteryname'),data_info.get('orderid')))
 		# 请求上一个请求返回的url,跳转支付页面
 		html = self.session.get(url, cookies=self.cookie).content
 		#返回支付页面html及sid，userid等data信息
@@ -46,15 +53,8 @@ class Pcbet(object):
 
 
 
-	def jc_touzhu(self):
-		form_data = jc_bet_data(25)
-		form_data = self.mem.getmem('bet_25')
-		s = self.session.post(url=readconfig('jc_bet_url'), cookies=self.cookie, data=form_data)
-		logger('jc_bet', s.content)
-		print s.content
-
-	def pay_cj(self):
-		html,data_info = self.pc_touzhu()
+	def pay_cj(self,lotteryid):
+		html,data_info = self.pc_touzhu(lotteryid)
 		soup = BeautifulSoup(html, 'html5lib')
 		sign = [x.get('value') for x in soup.find_all('input', id='ext_sign')][0]
 		url = readconfig('pay_cj')
@@ -86,13 +86,19 @@ class Pcbet(object):
 		info =self.session.post(url = url,data = datas,cookies = self.cookie).json()
 		return info
 
-
 	def get_user_info(self):#获取用户信息接口
 		url = readconfig('get_userinfo')
 		s = self.session.get(url,cookies = self.cookie)
 		info =  s.json()
 		return info
-
+	def _run(self):
+		from data import num_for_lotteryid
+		# for jczq in num_for_lotteryid('jczq'):
+		# 	self.pc_touzhu(jczq)
+		# for jclq in num_for_lotteryid('jclq'):
+		# 	self.pc_touzhu(jclq)
+		for i in range(10001,10029):
+			self.pc_touzhu(i)
 if __name__ == '__main__':
-	zf = Pcbet(32)
-	print zf.pc_touzhu()
+	bet = Pcbet()
+	bet._run()

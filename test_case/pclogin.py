@@ -6,7 +6,7 @@ from tools import Memcache,logger
 
 class CaipiaoLogin:
 	def __init__(self):
-		self.driver = webdriver.Firefox()
+		self.driver = webdriver.Chrome()
 		#self.driver.implicitly_wait(30)
 		self.base_url = "http://caipiao.1768.com"
 		self.uname = 'hm_txz'
@@ -17,7 +17,7 @@ class CaipiaoLogin:
 		driver.get(self.base_url)
 		time.sleep(3)
 		driver.find_element_by_xpath('//*[@id="head_top_login"]').click()
-		time.sleep(5)
+		time.sleep(10)
 		driver.find_element_by_xpath('/html/body/div[2]/div/div/div[2]/ul[1]/li[1]').click()
 		time.sleep(2)
 		driver.find_element_by_xpath('//*[@id="id_pawform"]/div[1]/input').send_keys(self.uname)
