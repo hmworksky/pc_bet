@@ -1,13 +1,16 @@
-1524228681381	geckodriver	INFO	Listening on 127.0.0.1:56027
-1524228683348	mozprofile::profile	INFO	Using profile path D:\Users\huangmin\AppData\Local\Temp\rust_mozprofile.DqxIubxNgS2U
-1524228683361	geckodriver::marionette	INFO	Starting browser D:\SOFTWARE\firefox\firefox.exe
-1524228683590	geckodriver::marionette	INFO	Connecting to Marionette on localhost:56044
-1524228690330	Marionette	INFO	Listening on port 56044
+1524467586394	geckodriver	INFO	Listening on 127.0.0.1:1680
+1524467588318	mozprofile::profile	INFO	Using profile path D:\Users\huangmin\AppData\Local\Temp\rust_mozprofile.qEVeUQlhmuZl
+1524467588331	geckodriver::marionette	INFO	Starting browser D:\SOFTWARE\firefox\firefox.exe
+1524467588475	geckodriver::marionette	INFO	Connecting to Marionette on localhost:1689
+1524467592469	Marionette	INFO	Listening on port 1689
 JavaScript warning: http://h4.jkimg.net/caipiao/js/indexv5/index.js?v=201803161619, line 542: unreachable code after return statement
-JavaScript warning: http://h2.jkimg.net/passport/pass-info/js/sparta/pawebjs-1.3.0.js, line 1: Error: WebGL: Failed to create WebGL context: WebGL creation failed: 
-* Error during ANGLE OpenGL init.
-* Error during ANGLE OpenGL init.
-* Error during ANGLE OpenGL init.
+JavaScript warning: http://h2.jkimg.net/passport/pas*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+ANGLE OpenGL init.
 * Error during ANGLE OpenGL init.
 * Error during ANGLE OpenGL init.
 * Exhausted GL driver caps.
@@ -20,9 +23,6 @@ JavaScript warning: http://h2.jkimg.net/passport/pass-info/js/sparta/pawebjs-1.3
 * Exhausted GL driver caps.
 JavaScript warning: http://h4.jkimg.net/caipiao/js/indexv5/index.js?v=201803161619, line 542: unreachable code after return statement
 JavaScript warning: http://h4.jkimg.net/caipiao/js/indexv5/index.js?v=201803161619, line 542: unreachable code after return statement
-1524228745321	Marionette	INFO	New connections will no longer be accepted
-[Child 13924] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2152
-/src/ipc/glue/MessageChannel.cpp, line 2152
-el error.: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2152
-152
-2152
+1524467649347	Marionette	INFO	New connections will no longer be accepted
+[Child 14068] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2152
+2

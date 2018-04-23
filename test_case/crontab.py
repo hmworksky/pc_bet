@@ -2,7 +2,7 @@
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
-from tools import get_num_issue,Memcache,get_match
+from tools import get_num_issue,Memcache
 from requests import get
 from bs4 import BeautifulSoup
 from urllib import quote

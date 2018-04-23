@@ -1,0 +1,40 @@
+
+2018-04-23 14:52:43:---[投注失败]---:投注结果:{"status":"error","msg":"\u6295\u6ce8\u5185\u5bb9\u4e0d\u5bf9\uff01"}
+2018-04-23 14:53:12:---[投注失败]---:投注结果:{"status":"error","msg":"\u6295\u6ce8\u5185\u5bb9\u4e0d\u5bf9\uff01"}
+2018-04-23 14:53:58:---[投注失败]---:投注结果:{"status":"error","msg":"\u6295\u6ce8\u5185\u5bb9\u4e0d\u5bf9\uff01"}
+2018-04-23 14:55:49:---[投注失败]---:投注结果:{"status":"error","msg":"\u6295\u6ce8\u5185\u5bb9\u4e0d\u5bf9\uff01"}
+2018-04-23 14:56:14:---[投注失败]---:投注结果:{"status":"error","msg":"\u6295\u6ce8\u5185\u5bb9\u4e0d\u5bf9\uff01"}
+2018-04-23 15:03:27:---[cookie]---:[{u'domain': u'.caipiao.1768.com', u'secure': False, u'value': u'863adb2132f5891b11b1e3490d2a2f59b3574cb0', u'expiry': None, u'path': u'/', u'httpOnly': False, u'name': u'CAIPIAOSID'}, {u'domain': u'caipiao.1768.com', u'secure': False, u'value': u'928530009', u'expiry': None, u'path': u'/', u'httpOnly': False, u'name': u'td_cookie'}, {u'domain': u'.caipiao.1768.com', u'secure': False, u'value': u'1524466965', u'expiry': None, u'path': u'/', u'httpOnly': False, u'name': u'Hm_lvt_e8100675ac9ecf4a1463634286c95570'}, {u'domain': u'.caipiao.1768.com', u'secure': False, u'value': u'1524466997', u'expiry': None, u'path': u'/', u'httpOnly': False, u'name': u'Hm_lpvt_e8100675ac9ecf4a1463634286c95570'}]
+2018-04-23 15:07:58:---[cookie]---:[{u'domain': u'.caipiao.1768.com', u'secure': False, u'value': u'22f6be62dab5288da82ed1b2acdaf28e7e9b26fb', u'expiry': None, u'path': u'/', u'httpOnly': False, u'name': u'CAIPIAOSID'}, {u'domain': u'caipiao.1768.com', u'secure': False, u'value': u'928557170', u'expiry': None, u'path': u'/', u'httpOnly': False, u'name': u'td_cookie'}, {u'domain': u'.caipiao.1768.com', u'secure': False, u'value': u'1524467237', u'expiry': None, u'path': u'/', u'httpOnly': False, u'name': u'Hm_lvt_e8100675ac9ecf4a1463634286c95570'}, {u'domain': u'.caipiao.1768.com', u'secure': False, u'value': u'1524467268', u'expiry': None, u'path': u'/', u'httpOnly': False, u'name': u'Hm_lpvt_e8100675ac9ecf4a1463634286c95570'}]
+2018-04-23 15:07:58:---[cookie]---:{u'Hm_lvt_e8100675ac9ecf4a1463634286c95570': u'1524467237', u'CAIPIAOSID': u'22f6be62dab5288da82ed1b2acdaf28e7e9b26fb', u'Hm_lpvt_e8100675ac9ecf4a1463634286c95570': u'1524467268', u'td_cookie': u'928557170'}
+2018-04-23 15:11:12:---[cookie]---:[{u'domain': u'.caipiao.1768.com', u'secure': False, u'value': u'3eb568828ea84a223efdb90a5f8f3883f5ade2cb', u'expiry': None, u'path': u'/', u'httpOnly': False, u'name': u'CAIPIAOSID'}, {u'domain': u'caipiao.1768.com', u'secure': False, u'value': u'928576590', u'expiry': None, u'path': u'/', u'httpOnly': False, u'name': u'td_cookie'}, {u'domain': u'.caipiao.1768.com', u'secure': False, u'value': u'1524467431', u'expiry': None, u'path': u'/', u'httpOnly': False, u'name': u'Hm_lvt_e8100675ac9ecf4a1463634286c95570'}, {u'domain': u'.caipiao.1768.com', u'secure': False, u'value': u'1524467461', u'expiry': None, u'path': u'/', u'httpOnly': False, u'name': u'Hm_lpvt_e8100675ac9ecf4a1463634286c95570'}]
+2018-04-23 15:11:12:---[cookie]---:{u'Hm_lvt_e8100675ac9ecf4a1463634286c95570': u'1524467431', u'CAIPIAOSID': u'3eb568828ea84a223efdb90a5f8f3883f5ade2cb', u'Hm_lpvt_e8100675ac9ecf4a1463634286c95570': u'1524467461', u'td_cookie': u'928576590'}
+2018-04-23 15:15:49:---[投注失败]---:投注结果:{"status":"error","msg":"\u6295\u6ce8\u5185\u5bb9\u4e0d\u5bf9\uff01"}
+2018-04-23 15:20:22:---[投注失败]---:投注结果:{"status":"error","msg":"\u6295\u6ce8\u5185\u5bb9\u4e0d\u5bf9\uff01"}
+2018-04-23 15:28:51:---[51]---:51在售期号写入缓存成功
+2018-04-23 15:28:56:---[52]---:52在售期号写入缓存成功
+2018-04-23 15:29:01:---[53]---:53在售期号写入缓存成功
+2018-04-23 15:29:05:---[54]---:54在售期号写入缓存成功
+2018-04-23 15:29:10:---[200]---:200在售期号写入缓存成功
+2018-04-23 15:29:14:---[201]---:201在售期号写入缓存成功
+2018-04-23 15:29:19:---[202]---:202在售期号写入缓存成功
+2018-04-23 15:29:24:---[20]---:20投注串写入缓存成功
+2018-04-23 15:29:29:---[26]---:26投注串写入缓存成功
+2018-04-23 15:29:34:---[21]---:21投注串写入缓存成功
+2018-04-23 15:29:39:---[22]---:22投注串写入缓存成功
+2018-04-23 15:29:44:---[23]---:23投注串写入缓存成功
+2018-04-23 15:29:49:---[2521]---:2521投注串写入缓存成功
+2018-04-23 15:29:53:---[30]---:30投注串写入缓存成功
+2018-04-23 15:29:58:---[31]---:31投注串写入缓存成功
+2018-04-23 15:30:03:---[32]---:32投注串写入缓存成功
+2018-04-23 15:30:07:---[33]---:33投注串写入缓存成功
+2018-04-23 15:30:12:---[35]---:35投注串写入缓存成功
+2018-04-23 15:31:19:---[10001]---:双色球投注成功,orderid:18042315332537513135ad
+2018-04-23 15:32:04:---[10001]---:双色球投注成功,orderid:180423153312930131455a
+2018-04-23 15:41:23:---[10001]---:双色球投注成功,orderid:1804231543957301355add
+2018-04-23 15:42:38:---[10001]---:双色球投注成功,orderid:180423154410571063105a
+2018-04-23 15:43:54:---[10001]---:双色球投注成功,orderid:180423154519496602735a
+2018-04-23 15:44:51:---[10001]---:双色球投注成功,orderid:180423154621269165415a
+2018-04-23 15:47:20:---[10001]---:双色球投注成功,orderid:180423154920698545015a
+2018-04-23 15:51:02:---[10001]---:双色球投注成功,orderid:180423155219804490985a
+2018-04-23 15:53:46:---[10001]---:双色球投注成功,orderid:180423155513810945555a

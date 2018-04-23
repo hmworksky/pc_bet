@@ -53,9 +53,7 @@ def bet_str(lotteryid=None, rednum=None, bluenum=None, wanfa=None):  # lotteryid
 		pass
 	elif lotteryid == 53:  # 排列五
 		pass
-def load_data_file():
-	data_path = readconfig('data_dir')
-	os.chdir(data_path)
+
 
 def strf_time(type):
 	import time
@@ -64,7 +62,7 @@ def strf_time(type):
 	else:
 		return time.strftime("%Y-%m-%d", time.localtime())
 def logger(title,msg):#titile标题，msg内容
-	load_data_file()
+	load_data_dir()
 	log_path = "log\{}.log".format(strf_time('date'))
 	with open(log_path,"a+") as f:
 		f.write("\n{}:---[{}]---:{}".format(strf_time('time'),title,msg))
@@ -86,7 +84,7 @@ def randombet(nums, count_num, type=0, start=1):  # nums:生成球号码,count_n
 
 def readconfig(key):
     cf = ConfigParser()
-    cf.read("E:/selenium/data/config.conf")
+    cf.read("config.conf")
     sections = cf.sections()
     for i in sections:
         kvs = dict(cf.items(i))
@@ -95,20 +93,19 @@ def readconfig(key):
         else :
             pass
 
-def load_cookie_dir():
+def load_data_dir():
 	'''
 	将工作目录切换至数据目录
 	:return:
 	'''
 	import os
-	os.chdir(readconfig('data_dir'))
+	os.chdir(os.path.join(os.path.pardir,'data'))
 
 def file_to_cookie():
 	'''
 	读取cookie信息
 	:return: cookie字典
 	'''
-	load_cookie_dir()
 	fp = open('cookie.txt', 'r').read()
 	return eval(fp)
 
@@ -172,7 +169,3 @@ def pc_bet_data(num):
 	return bet
 
 
-
-
-if __name__ == '__main__':
-	pc_bet_data(10001)

@@ -12,10 +12,16 @@ import tools
 
 class Pcbet(object):
 	def __init__(self):
-		self.base_url = readconfig('base_url')
-		self.session = requests.Session()
-		self.cookie = file_to_cookie()
 		self.mem = Memcache()
+		self.base_url = readconfig('base_url')
+
+
+		self.cookie = eval(self.mem.getmem('caipiao_pc_login_cookie'))
+		cookie_jar = requests.utils.cookiejar_from_dict(self.cookie, cookiejar=None, overwrite=True)
+		self.session = requests.Session()
+		self.session.cookies = cookie_jar
+		#requests.utils.add_dict_to_cookiejar(self.session.cookies,self.cookie)
+		
 
 
 	def pc_touzhu(self,lotteryid):
@@ -23,7 +29,10 @@ class Pcbet(object):
 		#获取投注form表单，pc_bet_data传递的参数详情见data文件中的bet_info
 		if lotteryid>10000:
 			forms_data = pc_bet_data(lotteryid)
+			print lotteryid
+			print forms_data
 			bet_url = readconfig('num_bet_url')
+			print bet_url
 		else:
 			forms_data = eval(self.mem.getmem("bet_{lotteryid}".format(**locals())).replace(' ',''))
 			if lotteryid ==2521:
@@ -33,7 +42,9 @@ class Pcbet(object):
 			elif lotteryid in num_for_lotteryid('jczq'):
 				bet_url = readconfig('jczq_bet_url')
 		#发送投注请求
-		s = self.session.post(url=bet_url, cookies=self.cookie, data=forms_data).content
+		print bet_url
+		print forms_data
+		s = self.session.post(url=bet_url, data=forms_data).content
 		if eval(s).get('url'):
 			# 获取返回值中的url参数
 			url = eval(s).get('url')
@@ -47,7 +58,7 @@ class Pcbet(object):
 		#记录投注结果
 		logger(lotteryid,"{}投注成功,orderid:{}".format(data_info.get('lotteryname'),data_info.get('orderid')))
 		# 请求上一个请求返回的url,跳转支付页面
-		html = self.session.get(url, cookies=self.cookie).content
+		html = self.session.get(url).content
 		#返回支付页面html及sid，userid等data信息
 		return html,data_info
 
@@ -98,6 +109,7 @@ class Pcbet(object):
 		# for jclq in num_for_lotteryid('jclq'):
 		# 	self.pc_touzhu(jclq)
 		for i in range(10001,10029):
+			print "num:{}".format(i)
 			self.pc_touzhu(i)
 if __name__ == '__main__':
 	bet = Pcbet()
