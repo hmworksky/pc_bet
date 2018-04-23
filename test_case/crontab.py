@@ -10,7 +10,7 @@ from tools import logger
 class InsertMemcache:
 	def __init__(self):
 		self.mem = Memcache()
-
+	#将数字彩期号写入缓存
 	def number_issue(self):
 		lotteryid_list = [51,52,53,54,200,201,202]
 		for lotteryid in lotteryid_list:

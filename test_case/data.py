@@ -174,6 +174,4 @@ def jc_data(lotteryid):
 
 			}
 	}
-	# if lotteryid in(30,31,32,33,35):
-	# 	cart = jc_bet_info.get('cart_jclq')
 	return jc_bet_info.get('url'),jc_bet_info.get('cart'),jc_bet_info.get('tag_leagueinfo').get(lotteryid)

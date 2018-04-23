@@ -9,9 +9,13 @@ from urllib import urlencode,quote,unquote
 import lxml
 import html5lib
 
-def bet_str(lotteryid=None, rednum=None, bluenum=None, wanfa=None):  # lotteryid(int):彩种ID，wanfa(str):01单式，02复式，03胆拖 rednum：红球个数，bluenum:蓝球个数
+
+# lotteryid(int):彩种ID，wanfa(str):01单式，02复式，03胆拖 rednum：红球个数，bluenum:蓝球个数
+#此函数暂未使用
+def bet_str(lotteryid=None, rednum=None, bluenum=None, wanfa=None):  
 	dic = {}
-	from itertools import combinations, permutations  # combinations不可重复的排列组合，permutations可重复的排列组合
+	# combinations不可重复的排列组合，permutations可重复的排列组合
+	from itertools import combinations, permutations  
 	if lotteryid == 200:  # 双色球
 		red = randombet(rednum, 33)
 		red_str = ''.join(map(str, red))
@@ -56,18 +60,27 @@ def bet_str(lotteryid=None, rednum=None, bluenum=None, wanfa=None):  # lotteryid
 
 
 def strf_time(type):
+	'''
+	#时间转化函数
+	type:传递time时获取详细的时分秒,其它返回年月日
+	'''
 	import time
 	if type == 'time':
 		return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 	else:
 		return time.strftime("%Y-%m-%d", time.localtime())
-def logger(title,msg):#titile标题，msg内容
+
+#titile标题，msg内容
+def logger(title,msg):
 	load_data_dir()
 	log_path = "log\{}.log".format(strf_time('date'))
 	with open(log_path,"a+") as f:
 		f.write("\n{}:---[{}]---:{}".format(strf_time('time'),title,msg))
+	os.chdir('.')
 
-def randombet(nums, count_num, type=0, start=1):  # nums:生成球号码,count_num:球总数,type:0=>不重复，1=>可重复，start从0或者1开始生成，1代表从1开始生成
+# nums:生成球号码,count_num:球总数,type:0=>不重复，1=>可重复，start从0或者1开始生成，1代表从1开始生成
+#此函数暂未使用
+def randombet(nums, count_num, type=0, start=1):  
 	li = []
 	while len(li) < nums:
 		if start == 1:
@@ -109,7 +122,14 @@ def file_to_cookie():
 	fp = open('cookie.txt', 'r').read()
 	return eval(fp)
 
+
 class Memcache(object):
+	'''
+	Memcache缓存
+	setmem:写入和更新缓存,传递key和value
+	getmem：读取缓存,传递key
+	delmem:删除缓存,根据key删除
+	'''
 	def __init__(self):
 		from pymemcache.client.base import Client
 		self.client = Client(("127.0.0.1",11211))
@@ -120,18 +140,21 @@ class Memcache(object):
 	def delmem(self,key):
 		return self.client.delete(key)
 
+#MD5加密
 def md5(data):
 	#str = "&".join(sorted(data.split("&")))
 	m = hashlib.md5()
 	m.update(data)
 	return m.hexdigest()
 
+
+#sha1加密
 def sha1(data):
 	return hashlib.sha1(data).hexdigest()
 
 
-
-def get_num_issue(lotteryid):#获取数字彩期号,从页面抓取在售期号
+#获取数字彩期号,从页面抓取在售期号
+def get_num_issue(lotteryid):
 	from data import bet_url_xpath
 	url,path = bet_url_xpath(lotteryid)
 	html = requests.get(url=url ).content
@@ -140,17 +163,22 @@ def get_num_issue(lotteryid):#获取数字彩期号,从页面抓取在售期号
 
 
 def xpath(html,path):
+	'''
+	html:html字符串
+	path:需要寻找的xpath路径
+	'''
 	import lxml
 	selector = lxml.etree.HTML(html)
 	links = selector.xpath(path)
 	data = [x.text for x in links ][0]
 	return data
 
-
+#将浏览器中的参数信息转化为字典
 def url2Dict(url):
     query = urlparse.urlparse(url).query
     return dict([(k, v[0]) for k, v in urlparse.parse_qs(query).items()])
 
+#组装pc端数字彩投注form表单
 def pc_bet_data(num):
 	from data import pc_bet_form,num_for_lotteryid
 	datas = pc_bet_form(num)

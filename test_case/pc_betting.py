@@ -14,13 +14,10 @@ class Pcbet(object):
 	def __init__(self):
 		self.mem = Memcache()
 		self.base_url = readconfig('base_url')
-
-
 		self.cookie = eval(self.mem.getmem('caipiao_pc_login_cookie'))
 		cookie_jar = requests.utils.cookiejar_from_dict(self.cookie, cookiejar=None, overwrite=True)
 		self.session = requests.Session()
 		self.session.cookies = cookie_jar
-		#requests.utils.add_dict_to_cookiejar(self.session.cookies,self.cookie)
 		
 
 
@@ -31,6 +28,8 @@ class Pcbet(object):
 			forms_data = pc_bet_data(lotteryid)
 			print lotteryid
 			print forms_data
+			import os
+			print os.getcwd()
 			bet_url = readconfig('num_bet_url')
 			print bet_url
 		else:
@@ -42,8 +41,6 @@ class Pcbet(object):
 			elif lotteryid in num_for_lotteryid('jczq'):
 				bet_url = readconfig('jczq_bet_url')
 		#发送投注请求
-		print bet_url
-		print forms_data
 		s = self.session.post(url=bet_url, data=forms_data).content
 		if eval(s).get('url'):
 			# 获取返回值中的url参数
@@ -109,7 +106,6 @@ class Pcbet(object):
 		# for jclq in num_for_lotteryid('jclq'):
 		# 	self.pc_touzhu(jclq)
 		for i in range(10001,10029):
-			print "num:{}".format(i)
 			self.pc_touzhu(i)
 if __name__ == '__main__':
 	bet = Pcbet()
